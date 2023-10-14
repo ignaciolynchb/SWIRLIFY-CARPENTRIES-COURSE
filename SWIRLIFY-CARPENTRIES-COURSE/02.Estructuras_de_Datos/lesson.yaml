@@ -1,0 +1,208 @@
+- Class: meta
+  Course: My_New_Course
+  Lesson: Estructuras de Datos
+  Author: Mauricio García
+  Type: Standard
+  Organization: FCEA-UDELAR
+  Version: 1.0.1
+
+- Class: text
+  Output: Bienvenido a la segunda lección de este curso, denominada `Estructura de Datos`.
+  
+- Class: text
+  Output: Aquí exploraremos los distintos tipos de datos, conociendo los dataframes, vectors, factors y lists.
+  
+- Class: text
+  Output: El lenguaje R posee una gran habilidad para manejar datos en forma de tablas, similares a las que puedes ver en planillas de cálculo. 
+  
+#- Class: text
+#  Output: A diferencia de las matrices, los dataframes pueden contener múltiples tipos de datos.
+  
+- Class: text  
+  Output: Para comenzar, definiremos a los vectores. Un vector en R es una lista ordenada de cosas, donde todos los elementos tienen que ser del mismo tipo de datos básico. Si no eliges un tipo de datos, por defecto R elige el tipo de datos `logical`.
+
+- Class: cmd_question
+  Output: Te pediremos que crees un vector, con el operador `:`, del 1 al 16. Debes guardarlo en una variable llamada mi_vector.
+  CorrectAnswer: mi_vector <- 1:16
+  AnswerTests: omnitest(correctExpr='mi_vector <- 1:16')
+  Hint: Si quieres crear un vector que contenga los números del 1 al 3, puedes usar c(1, 2, 3) o 1:3. Recuerda que para guardar un objeto utilizamos el operador `<-`. 
+
+- Class: cmd_question
+  Output: Para visualizar el contenido del vector creado, prueba escribir su nombre.
+  CorrectAnswer: mi_vector
+  AnswerTests: omnitest(correctExpr='mi_vector')
+  Hint: Escribe mi_vector para ver qué contiene.
+
+- Class: cmd_question
+  Output: Un atributo que nos puede interesar es la dimensión del objeto. ¿Cuál crees que es la dimensión del vector creado? Responde la pregunta escribiendo dim(mi_vector).
+  CorrectAnswer: dim(mi_vector)
+  AnswerTests: omnitest(correctExpr='dim(mi_vector)')
+  Hint: Escribe dim(mi_vector) para obtener el resultado.
+
+- Class: cmd_question
+  Output: ¿Te has sorprendido? Los vectores no tienen dimensión, por lo que en este caso será más útil la función length(), que cuenta la cantidad de elementos del objeto. ¿Puedes ponder en práctica la función con mi_vector?
+  CorrectAnswer: length(mi_vector)
+  AnswerTests: omnitest(correctExpr='length(mi_vector)')
+  Hint: Escribe length(mi_vector) para ver la cantidad de elementos que contiene.
+
+- Class: cmd_question
+  Output: Posee 16 elementos. ¿Cómo convertimos nuestro vector en una matriz de 4 filas y 4 columnas? Para ello, debemos asignarle una dimensión. Intenta escribiendo dim(mi_vector) <- c(4, 4).
+  CorrectAnswer: dim(mi_vector) <- c(4, 4)
+  AnswerTests: omnitest(correctExpr='dim(mi_vector) <- c(4, 4)')
+  Hint: Escribe dim(mi_vector) <- c(4, 4) para convertir nuestro vector en matriz.
+
+- Class: cmd_question
+  Output: Miremos ahora el contenido mi_vector. 
+  CorrectAnswer: mi_vector
+  AnswerTests: omnitest(correctExpr='mi_vector')
+  Hint: Debes escribir mi_vector para ver su contenido.
+                                                                                                          
+- Class: cmd_question
+  Output: Con la función class(), podemos ver de qué clase de objeto se trata. Escribe class(mi_vector).
+  CorrectAnswer: class(mi_vector)
+  AnswerTests: omnitest(correctExpr='class(mi_vector)')
+  Hint: Escribe class(mi_vector) para ver la clase de mi_vector.
+                                                                                                          
+- Class: cmd_question
+  Output: Se trata de una matriz, como queríamos. Para no confundirnos, guardemos este objeto bajo el nombre mi_matriz.
+  CorrectAnswer: mi_matriz <- mi_vector
+  AnswerTests: omnitest(correctExpr='mi_matriz <- mi_vector')
+  Hint: Recuerda que no podemos cambiarle el nombre a un objeto. Por lo que crearemos uno nuevo, utilizando mi_matriz <- mi_vector.
+                                                                                                        
+- Class: cmd_question
+  Output: Sin embargo, hay una forma más sencilla de crear directamente una matriz, sin convertir un vector. Para ello, utilizamos la funcion matrix(). Bastará con escribir matrix(1:16, nrow=4, ncol=4). Crea esta matriz y guardala en mi_matriz2.
+  CorrectAnswer: mi_matriz2 <- matrix(1:16, nrow=4, ncol=4)
+  AnswerTests: calculates_same_value('matrix(1:16, nrow=4, ncol=4)'); expr_creates_var('mi_matriz2')
+  Hint: Escribe mi_matriz2 <- matrix(1:16, nrow=4, ncol=4).
+
+- Class: cmd_question
+  Output: Para confirmar que las dos matrices son iguales, podemos utilizar la función identical(). ¿Puedes comprobarlo?
+  CorrectAnswer: identical(mi_matriz, mi_matriz2)
+  AnswerTests: any_of_exprs('identical(mi_matriz, mi_matriz2)', 'identical(mi_matriz2, mi_matriz)')
+  Hint: Si no sabes como hacerlo, puedes usar la función `?` junto con la palabra identical, para obtener pistas.
+
+- Class: text
+  Output: Imagina que ahora queremos tener un cuadro de datos de perros en adopción. Cada fila representará a un canino, mientras que cada columna será un atributo del mismo.
+
+- Class: cmd_question
+  Output: Dentro de nuestra matriz, queremos que haya una columna con el nombre de los perros. Comenzemos creando este vector, nombrandolo como nombres_p y sabiendo que son "Lola", "Tito", "Milo", "Dolly". Para ello utilizamos la función c().
+  CorrectAnswer: nombres_p <- c("Lola", "Tito", "Milo", "Dolly")
+  AnswerTests: omnitest(correctExpr='nombres_p <- c("Lola", "Tito", "Milo", "Dolly")')
+  Hint: Prueba escribiendo nombres_p <- c("Lola", "Tito", "Milo", "Dolly").
+
+- Class: cmd_question
+  Output: Combinemos ahora la columna de nombres con la matriz que habíamos creado antes, utilizando la función cbind() y los argumentos nombres_p y mi_matriz.
+  CorrectAnswer: cbind(nombres_p, mi_matriz)
+  AnswerTests: omnitest(correctExpr='cbind(nombres_p, mi_matriz)')
+  Hint: Prueba escribiendo cbind(nombres_p, mi_matriz).
+
+- Class: text
+  Output: La combinación causó que los números se encuentren entre comillas. Esto significa que es una matriz de caracteres, lo cual no buscamos. Esto sucede debido a que las matrices solo pueden tener una clase de datos, por lo que R ha convertido los números a caracteres. Este proceso se denomina coerción, y por ello aparecen las comillas. Se trata de una coerción implícita, ya que no la hemos solicitado directamente.
+
+- Class: cmd_question
+  Output: Sin embargo, puedo querer realizar una coerción directamente, por ejemplo, pasar los datos de numéricos a caracteres en mi_matriz. Para ello, puedo utilizar la función as.character(). Pruébala, guardando el resultado en mi_matriz_ch.
+  CorrectAnswer: mi_matriz_ch <- as.character(mi_matriz)
+  AnswerTests: omnitest(correctExpr='mi_matriz_ch <- as.character(mi_matriz)')
+  Hint: Escribe mi_matriz_ch <- as.character(mi_matriz).
+  
+- Class: cmd_question
+  Output: Visualizando el objeto mi_matriz_ch, verás que todos los valores son de tipo character. Existen otras funciones, como as_numeric(), as_logical(), as_factor(), entre otras, que se utilizan para realizar coerciones directas. Intenta ver el contenido de mi_matriz_ch.
+  CorrectAnswer: mi_matriz_ch
+  AnswerTests: omnitest(correctExpr='mi_matriz_ch')
+  Hint: Escribe mi_matriz_ch para ver su contenido.  
+                                                                                                      
+- Class: cmd_question
+  Output: Prueba escribir ahora perros <- data.frame(nombres_p, mi_matriz)
+  CorrectAnswer: perros <- data.frame(nombres_p, mi_matriz)
+  AnswerTests: omnitest(correctExpr='perros <- data.frame(nombres_p, mi_matriz)')
+  Hint: Escribe perros <- data.frame(nombres_p, mi_matriz).
+                                                                                                          
+- Class: cmd_question
+  Output: Queremos visualizar qué hay en el objeto `perros`. Inténtalo.
+  CorrectAnswer: perros
+  AnswerTests: omnitest(correctExpr='perros')
+  Hint: Escribe perros para ver su contenido.
+
+- Class: text
+  Output: La función data.frame() nos permitió guardar los datos manteniendo la clase de cada vector. La clase del objeto perros es `data.frame`.
+                                                                                                       
+- Class: text
+  Output: Es posible asignar nombres a las filas o las columnas de manera individual. Ya hemos nombrado las filas. Debido a que tenemos 5 columnas (las cuatro de la matriz inicial y la de los nombres), debemos primero crear un vector de 5 elementos conteniendo los títulos de las variables (en orden).
+                                                                                                          
+- Class: cmd_question
+  Output: Crea un vector llamado nombres_col que contenga las siguientes palabras "nombre", "edad", "peso", "color", "sexo".
+  CorrectAnswer: nombres_col <- c("nombre", "edad", "peso", "color", "sexo")
+  AnswerTests: omnitest(correctExpr='nombres_col <- c("nombre", "edad", "peso", "color", "sexo")')
+  Hint: Prueba con nombres_col <- c("nombre", "edad", "peso", "color", "sexo").
+                                                                                                          
+- Class: cmd_question
+  Output: Utilizaremos la función colnames() para cambiar este atributo de nuestro dataframe. Escribe colnames(perros) <- nombres_col
+  CorrectAnswer: colnames(perros) <- nombres_col
+  AnswerTests: omnitest(correctExpr='colnames(perros) <- nombres_col')
+  Hint: Escribe colnames(perros) <- nombres_col.
+                                                                                                          
+- Class: cmd_question
+  Output: veamos si pudimos construir nuestra matriz deseada. Observa el contenido de `perros`.
+  CorrectAnswer: perros
+  AnswerTests: omnitest(correctExpr='perros')
+  Hint: Escribe perros.
+  
+- Class: cmd_question
+  Output: Para poder acceder al contenido de una columna en específico, utilizamos el operador `$`. Por ejemplo, para visualizar la columna edad, escribe perros$edad.
+  CorrectAnswer: perros$edad
+  AnswerTests: omnitest(correctExpr='perros$edad')
+  Hint: Escribe perros$edad.
+  
+- Class: cmd_question
+  Output: Sobre las columnas podemos realizar operaciones. ¿Cómo harías para sumarle una unidad a todos los elementos de la columna edad?
+  CorrectAnswer: perros$edad + 1
+  AnswerTests: omnitest(correctExpr='perros$edad + 1')
+  Hint: Para agregarle un año a cada perro, puedes escribir perros$edad + 1.
+  
+- Class: text
+  Output: También podemos sumar columnas entre sí, aunque para ello deben tener el mismo tipo de dato. Hay 5 tipos de datos principales en R, estos son double, integer, complex, logical and character. Para saber la clase de la columna, utilizamos class(), función que ya hemos visto antes.
+
+- Class: text
+  Output: Otra estructura de datos que te será útil en R serán las listas. Estas pueden contener cualquier tipo de dato.
+  
+- Class: cmd_question
+  Output: Con la función list(), crea una lista que contenga 1, "a", TRUE, 1+4i y guárdala con el nombre mi_lista
+  CorrectAnswer: mi_lista <- list(1, "a", TRUE, 1+4i)
+  AnswerTests: omnitest(correctExpr='mi_lista <- list(1, "a", TRUE, 1+4i)')
+  Hint: Prueba escribir mi_lista <- list(1, "a", TRUE, 1+4i)
+  
+- Class: cmd_question
+  Output: Si visualizas su contenido, notarás que ha almacenado los distintos tipos de datos que le hemos asignado. Escribe mi_lista
+  CorrectAnswer: mi_lista
+  AnswerTests: omnitest(correctExpr='mi_lista')
+  Hint: Escribe mi_lista para visualizar su contenido.
+  
+- Class: cmd_question
+  Output: Un hecho interesante, es que los data_frames son en realidad listas de vectores y factores. Compruébalo con la función typeof() aplicada a perros.
+  CorrectAnswer: typeof(perros)
+  AnswerTests: omnitest(correctExpr='typeof(perros)')
+  Hint: Escribiendo typeof(perros) puedes ver el tipo de dato que es el data frame.
+  
+- Class: text
+  Output: Hemos hablado de vectores y factores, pero ¿qué es un factor?
+  
+- Class: cmd_question
+  Output: Los factores se utilizan para representar información categórica, es decir aquellos datos que pueden organizarse por categorías. En perros, podríamos pensar que el color solo puede ser blanco, negro o amarillo. Creemos un vector para representar el color de nuestros cuatro perros, utilizando color_perros <- c("blanco", "amarillo", "negro", "blanco")
+  CorrectAnswer: color_perros <- c("blanco", "amarillo", "negro", "blanco")
+  AnswerTests: omnitest(correctExpr='color_perros <- c("blanco", "amarillo", "negro", "blanco")')
+  Hint: Escribe color_perros <- c("blanco", "amarillo", "negro", "blanco")
+  
+- Class: cmd_question
+  Output: El vector creado es de tipo character, pero utilizando la función factor(), lo podemos convertir justamente a un factor. Inténtalo, guardándolo bajo el mismo nombre.
+  CorrectAnswer: color_perros <- factor(color_perros)
+  AnswerTests: omnitest(correctExpr='color_perros <- factor(color_perros)')
+  Hint: Para lograrlo, intenta con color_perros <- factor(color_perros)
+  
+- Class: cmd_question
+  Output: Con la función str(), podremos ver las categorías que se almacenan en el factor creado. Pruébalo.
+  CorrectAnswer: str(color_perros)
+  AnswerTests: omnitest(correctExpr='str(color_perros)')
+  Hint: Escribe str(color_perros)
+
+- Class: text
+  Output: En esta lección has aprendido a trabajar con vectores, matrices, dataframes, listas y factores. Seguiremos profundizando en estos contenidos durante las próximas lecciones.

@@ -1,0 +1,154 @@
+- Class: meta
+  Course: My_New_Course
+  Lesson: Explorando_data_frames
+  Author: Ignacio Lych
+  Type: Standard
+  Organization: FCEA-UDELAR
+  Version: 1.0.0
+
+- Class: text
+  Output: A esta altura de nuestro curso, ya viste los tipos y estructuras de datos básicos de R y todo lo que hagas va a ser una manipulación de esas herramientas. Ahora pasaremos a aprender un par de cosas sobre cómo trabajar con la clase data frame (la estructura de datos que usarás la mayoría del tiempo y que será la estrella del show). Un data frame es la tabla que creamos al cargar información de un archivo csv.
+
+- Class: text
+  Output: Veamos como agregar columnas y filas a un data frame. Aprendimos que las columnas en un data frame son vectores. Por lo tanto, sabemos que nuestros datos son consistentes con el tipo de dato dentro de esa columna. Si queremos agregar una nueva columna, podemos empezar por crear un nuevo vector.
+
+- Class: cmd_question
+  Output: Trabajaremos con el data frame 'gatos' utilizado en modulos anteriores. Echale un vistazo
+  CorrectAnswer: gatos
+  AnswerTests: omnitest(correctExpr='gatos')
+  Hint: Escriba gatos para visualizar el contenido del data frame.
+
+- Class: cmd_question
+  Output: Creemos el vector edad <- c(2,3,5)
+  CorrectAnswer: edad <- c(2,3,5)
+  AnswerTests: omnitest(correctExpr='edad <- c(2,3,5)')
+  Hint: Escriba edad <- c(2,3,5) para crear el vector.
+
+- Class: cmd_question
+  Output: Agreguemos una columna a gatos, utilizando gatos <- cbind(gatos, edad)
+  CorrectAnswer: gatos <- cbind(gatos, edad)
+  AnswerTests: omnitest(correctExpr='gatos <- cbind(gatos, edad)')
+  Hint: Escriba gatos <- cbind(gatos, edad) para agregar la columna.
+
+- Class: cmd_question
+  Output: Visualiza el contenido de gatos
+  CorrectAnswer: gatos
+  AnswerTests: omnitest(correctExpr='gatos')
+  Hint: Escriba gatos para visualizar su contenido.
+  
+- Class: text
+  Output: Tenga en cuenta que fallará si tratamos de agregar un vector con un número diferente de entradas que el número de filas en el marco de datos.R quiere ver un elemento en nuestra nueva columna para cada fila de la tabla. Para que funcione, debemos tener nrow(gatos) = length(edad).
+  
+- Class: text
+  Output: Veamos como agregar filas.
+
+- Class: text
+  Output: Sabemos que las filas de un data frame están compuestas por listas.
+  
+- Class: cmd_question
+  Output: Creamos la lista nueva_fila <- list("carey", 3.3, TRUE, 9)
+  CorrectAnswer: nueva_fila <- list("carey", 3.3, TRUE, 9)
+  AnswerTests: omnitest(correctExpr='nueva_fila <- list("carey", 3.3, TRUE, 9)')
+  Hint: Escriba nueva_fila <- list("carey", 3.3, TRUE, 9) para crear nueva_fila
+  
+- Class: cmd_question
+  Output: De forma similar a como hicimos con la columna edad, utiliza rbind para agregar la lista nueva_fila al dataframe gatos.
+  CorrectAnswer: gatos <- rbind(gatos, nueva_fila)
+  AnswerTests: omnitest(correctExpr='gatos <- rbind(gatos,nueva_fila)')
+  Hint: Escriba gatos <- rbind(gatos, nueva_fila) para agregar una nueva fila a gatos
+
+- Class: text
+  Output: Trabajemos con factores. Los objetos de la clase factor son otro tipo de datos que debemos usar con cuidado. Cuando R crea un factor, únicamente permite los valores que originalmente estaban allí cuando cargamos los datos. Por ejemplo, imaginemos que existen cinco colores diferentes de gatos ('mixto', ‘negro’, ‘canela’, ‘atigrado’ y 'carey'). Cualquier categoría nueva que no entre en esas categorías será rechazada (y se conviertirá en NA).
+
+- Class: text
+  Output: En ese caso, correspondería cambiar el tipo de dato de la columna color del data frame gastos, categorizandola como factor.
+
+- Class: cmd_question
+  Output: Escribe gatos$color <- factor(gatos$color, levels = c("mixto", "negro", "canela", "atigrado", "carey")) para definir a color como un factor con cuatro niveles.
+  CorrectAnswer: gatos$color <- factor(gatos$color, levels = c("mixto", "negro", "canela", "atigrado", "carey"))
+  AnswerTests: omnitest(correctExpr='gatos$color <- factor(gatos$color, levels = c("mixto", "negro", "canela", "atigrado", "carey"))')
+  Hint: Escriba gatos$color <- factor(gatos$color, levels = c("mixto","negro", "canela", "atigrado", "carey"))
+
+- Class: cmd_question
+  Output: Chequea con class el tipo de dato de la columa color
+  CorrectAnswer: class(gatos$color)
+  AnswerTests: omnitest(correctExpr='class(gatos$color)')
+  Hint: Escriba class(gatos$color)
+
+- Class: text
+  Output: Apliquemos lo aprendido en un ejemplo. Imaginemos que, como los perros, 1 año humano es equivalente a 7 años en los gatos
+
+- Class: cmd_question
+  Output: Crea un vector llamado human.edad multiplicando gatos$edad por 7.
+  CorrectAnswer: human.edad <- gatos$edad*7
+  AnswerTests: omnitest(correctExpr='human.edad <- gatos$edad*7')
+  Hint: Multiplique la columna gatos$edad por 7 y almacenelo en un vectorllamado human.edad
+
+- Class: cmd_question
+  Output: Agregue la columna human.edad a gatos
+  CorrectAnswer: gatos <- cbind(gatos, human.edad)
+  AnswerTests: omnitest(correctExpr='gatos <- cbind(gatos, human.edad)')
+  Hint: Utiliza cbind para agregar una columna
+
+- Class: text
+  Output: Es posible tambien eliminar filas o columnas del dataframe. Para ello, utilizaremos la posición de la fila o columna, también llamado índice.
+
+- Class: cmd_question
+  Output: Ejecute gatos[,-4] y visualice que ocurre
+  CorrectAnswer: gatos[,-4]
+  AnswerTests: omnitest(correctExpr='gatos[,-4]')
+  Hint: Elimina la cuarta columna con gatos[,-4]
+
+- Class: text
+  Output: Como puedes ver, se han mantenido todas las filas pero se ha eliminado la cuarta columna. A eso hacemos referencia con el '-4', que puede leerse como 'mantener todas las columnas, excepto la 4'
+
+- Class: text
+  Output: La sintaxis es similar cuando te interesara eliminar la segunda fila de un dataframe
+
+- Class: cmd_question
+  Output: Ejecute gatos[-2,] y visualice que ocurre
+  CorrectAnswer: gatos[-2,]
+  AnswerTests: omnitest(correctExpr='gatos[-2,]')
+  Hint: Elimina la segunda fila con gatos[-2,]
+  
+- Class: text
+  Output: En general, no construirás manualmente tus data frames, si no que los importarás de archivos existentes.  Por ejemplo, archivos con extension .csv. Para ello, utilizaremos la funcion read.csv
+
+- Class: cmd_question
+  Output: Ejecuta gapminder <- read.csv(datapath) para crear el data frame a partir del csv
+  CorrectAnswer: gapminder <- read.csv(datapath)
+  AnswerTests: omnitest(correctExpr='gapminder <- read.csv(datapath)')
+  Hint: Ejecuta gapminder <- read.csv(datapath) para crear el data frame a partir del csv
+  
+- Class: text
+  Output: datapath es la ruta en donde tenemos el archivo que nos interesa cargar. Puedes notar que se ha generado un nuevo data frame en tu espacio de trabajo.
+
+- Class: text
+  Output: Una vez cargado el data frame, exploraremos su contenido.
+
+- Class: text
+  Output: Vamos a investigar gapminder un poco; lo primero que hay que hacer siempre es ver cómo se ve el dataset usando str.
+
+- Class: cmd_question
+  Output: La funcion str(nombre_del_dataframe) nos muestra la composición de un dataframe. Utilizala
+  CorrectAnswer: str(gapminder)
+  AnswerTests: omnitest(correctExpr='str(gapminder)')
+  Hint: str(nombre_del_dataframe)
+  
+- Class: cmd_question
+  Output: La funcion colnames(nombre_del_dataframe) nos permite conocer el nombre de sus columnas. Utilizala
+  CorrectAnswer: colnames(gapminder)
+  AnswerTests: omnitest(correctExpr='colnames(gapminder)')
+  Hint: colnames(nombre_del_dataframe)
+
+- Class: cmd_question
+  Output: La funcion dim(nombre_del_dataframe) nos permite conocer la cantidad de filas y columnas. Utilizala
+  CorrectAnswer: dim(gapminder)
+  AnswerTests: omnitest(correctExpr='dim(gapminder)')
+  Hint: dim(nombre_del_dataframe)
+
+- Class: cmd_question
+  Output: La funcion head(nombre_del_dataframe) nos permite visualizar las primeras 6 filas de nuestro dataframe. Utilizala
+  CorrectAnswer: head(gapminder)
+  AnswerTests: omnitest(correctExpr='head(gapminder)')
+  Hint: head(nombre_del_dataframe)

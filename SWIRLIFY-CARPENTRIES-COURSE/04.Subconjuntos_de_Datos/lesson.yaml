@@ -1,0 +1,114 @@
+- Class: meta
+  Course: My_New_Course
+  Lesson: Subconjuntos de datos
+  Author: Mauricio García
+  Type: Standard
+  Organization: FCEA-UDELAR
+  Version: 1.0.0
+  
+- Class: text
+  Output: Bienvenido a la cuarta lección de este curso, denominada `Subconjuntos de Datos`.
+  
+- Class: cmd_question
+  Output: ¿Recuerdas que en lecciones anteriores estuvimos trabajando sobre los vectores? Creemos uno denominado mi_vector, que contenga los números 1.4, 2.5, 3.7, 8.6, 5.6.
+  CorrectAnswer: mi_vector <- c(1.4, 2.5, 3.7, 8.6, 5.6)
+  AnswerTests: omnitest(correctExpr='mi_vector <- c(1.4, 2.5, 3.7, 8.6, 5.6)')
+  Hint: Si quieres crear un vector que contenga los números indicados, puedes usar mi_vector <- c(1.4, 2.5, 3.7, 8.6, 5.6).
+  
+- Class: cmd_question
+  Output: A cada uno de estos elementos, los llamaremos "a", "b", "c", "d", "e". Para darle nombre a los elementos de un vector, utilizamos la función names() sobre él. Inténtalo.
+  CorrectAnswer: names(mi_vector) <- c("a", "b", "c", "d", "e")
+  AnswerTests: omnitest(correctExpr='names(mi_vector) <- c("a", "b", "c", "d", "e")')
+  Hint: Para lograrlo prueba names(mi_vector) <- c("a", "b", "c", "d", "e").
+  
+- Class: cmd_question
+  Output: ¿Cómo accedes a uno de los elementos del vector? Para ello debes usar la función corchetes, de manera que si quieres visualizar el elemento ubicado en el lugar cuatro, debes escribir mi_vector[4].
+  CorrectAnswer: mi_vector[4]
+  AnswerTests: omnitest(correctExpr='mi_vector[4]')
+  Hint: Escribe mi_vector[4].
+  
+- Class: text
+  Output: Podemos pedirle a R que nos muestre más de un elemento. Por ejemplo utilizando mi_vector[1:3] nos devolverá los primeros tres elementos.
+
+- Class: text
+  Output: Además, si utilizamos un número negativo, nos devolverá todos los elementos excepto el indicado. Es decir, mi_vector[-2], nos mostrará los elementos 1, 3, 4 y 5.
+  
+- Class: cmd_question
+  Output: Utilizando esta última operación, puedes quitar elementos de un vector. Por ejemplo, si quisiéramos borrar el elemento número cinco, guardaríamos en mi_vector, el mismo vector sin este elemento. Inténtalo.
+  CorrectAnswer: mi_vector <- mi_vector[-5]
+  AnswerTests: omnitest(correctExpr='mi_vector <- mi_vector[-5]')
+  Hint: Para lograrlo, prueba con mi_vector <- mi_vector[-5].
+  
+- Class: cmd_question
+  Output: También podemos quedarnos con algunos elementos utilizando vectores lógicos. Si solo queremos ver el primero, podemos utilizar mi_vector[c(TRUE, FALSE, FALSE, FALSE)]. Pruébalo.
+  CorrectAnswer: mi_vector[c(TRUE, FALSE, FALSE, FALSE)]
+  AnswerTests: omnitest(correctExpr='mi_vector[c(TRUE, FALSE, FALSE, FALSE)]')
+  Hint: Escribe mi_vector[c(TRUE, FALSE, FALSE, FALSE)].
+  
+- Class: text
+  Output: Existen más formas de hacer subsetting de vectores, es decir, de quedarnos con un subconjunto del vector. Por ejemplo, al escribir mi_vector[mi_vector > 3], nos quedaremos con los valores mayores a tres.
+
+- Class: text
+  Output: De igual forma, podemos hacerlo por el nombre de los elementos. Al ejecutar mi_vector[names(mi_vector) == "a"] nos devolverá el elemento `a`, y si cambiamos el operador `==` por `!=` nos mostrará todos menos el `a`.
+  
+- Class: text
+  Output: ¿Que pasaría si en vez de un vector tenemos un factor? Utilizaríamos las mismas herramientas para hacer subsetting.
+  
+- Class: cmd_question
+  Output: ¿Y si tenemos matrices? Para empezar, crearemos una matriz bajo el nombre mi_matriz, que contenga 5 filas y 5 columnas con los números del 1 al 25.
+  CorrectAnswer: mi_matriz <- matrix(1:25, nrow=5, ncol=5)
+  AnswerTests: omnitest(correctExpr='mi_matriz <- matrix(1:25, nrow=5, ncol=5)')
+  Hint: Prueba con mi_matriz <- matrix(1:25, nrow=5, ncol=5).
+  
+- Class: cmd_question
+  Output: Aquí también podemos utilizar la función corchete, pero con dos argumentos, el primero para las filas y el segundo para las columnas. Por ejemplo, queremos el valor que se encuentra en la fila 2 y la columna 3. Escribe mi_matriz[2,3].
+  CorrectAnswer: mi_matriz[2,3]
+  AnswerTests: omnitest(correctExpr='mi_matriz[2,3]')
+  Hint: Escribe mi_matriz[2,3].
+  
+- Class: text
+  Output: Si quieres seleccionar toda una fila, bastará con que dejes vacío el campo de las columnas, y viceversa. Por ejemplo, si queremos obtener solo la fila 2, debemos escribir mi_matriz[2,]
+  
+- Class: cmd_question
+  Output: Imagina que ahora debemos trabajar con una lista. ¿Recuerdas la que utilizamos en la lección 2? Vuelve a generarla con mi_lista <- list(1, "a", TRUE, 1+4i)
+  CorrectAnswer: mi_lista <- list(1, "a", TRUE, 1+4i)
+  AnswerTests: omnitest(correctExpr='mi_lista <- list(1, "a", TRUE, 1+4i)')
+  Hint: Genera la lista utilizando mi_lista <- list(1, "a", TRUE, 1+4i)
+
+- Class: cmd_question
+  Output: ¿Cómo crees que puedes seleccionar el primer elemento? Inténtalo.
+  CorrectAnswer: mi_lista[1]
+  AnswerTests: omnitest(correctExpr='mi_lista[1]')
+  Hint: Puedes observar el primer elemento de la lista utilizando mi_lista[1].
+  
+- Class: text
+  Output: Si los elementos de la lista tienen nombres, también puedes utilizar el operador $ para seleccionar los elementos.
+
+- Class: text
+  Output: Por último, será común que trabajemos con data frames. Recordemos que estos no eran más que listas, por lo tanto, siguen la misma lógica que la planteada antes.
+  
+- Class: cmd_question
+  Output: Sin embargo, aquí tenemos dos dimensiones, filas y columnas. En R hay un data frame guardado llamado cars, obsérvalo.
+  CorrectAnswer: cars
+  AnswerTests: omnitest(correctExpr='cars')
+  Hint: Escribe cars para visualizarlo.
+  
+- Class: cmd_question
+  Output: Si quisiéramos quedarnos con la columna speed, podríamos utilizar cars["speed"] o cars[1]. Prueba la segunda opción.
+  CorrectAnswer: cars[1]
+  AnswerTests: omnitest(correctExpr='cars[1]')
+  Hint: Intenta ejecutar cars[1].
+  
+- Class: cmd_question
+  Output: Lo que vemos aquí es un data frame, más pequeño. Podríamos querer en cambio quedarnos únicamente con los valores de la columna speed, en un vector, y no bajo la forma de un data frame. Para ello, utilizamos doble corchete. Inténtalo.
+  CorrectAnswer: cars[[1]]
+  AnswerTests: omnitest(correctExpr='cars[[1]]')
+  Hint: Puedes conseguir el resultado deseado utilizando cars[[1]]. 
+  
+- Class: text
+  Output: Finalmente, podemos seleccionar algunas filas o columnas del data frame de la misma forma que lo hicimos para las matrices.
+  
+- Class: text
+  Output: En esta lección has aprendido a obtener subconjuntos de vectores, matrices, factores, listas y data frames. Seguiremos profundizando en estos contenidos durante las próximas lecciones.
+
+ 

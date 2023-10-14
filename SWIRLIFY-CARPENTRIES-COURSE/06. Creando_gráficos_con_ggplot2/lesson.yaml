@@ -1,0 +1,76 @@
+- Class: meta
+  Course: My_New_Course
+  Lesson: Creando gráficos con ggplot2
+  Author: Mauricio García
+  Type: Standard
+  Organization: FCEA-UDELAR
+  Version: 1.0.0
+
+- Class: text
+  Output: Bienvenido a la sexta lección de este curso, denominada `Creando gráficos con ggplot2`.
+  
+- Class: text
+  Output: Las gráficas son herramientas muy útiles a la hora de explorar nuestros conjuntos de datos. El paquete ggplot2 nos permite crearlos de manera sencilla y con una alta calidad.
+  
+- Class: cmd_question
+  Output: El primer argumento que le especificaremos será data, es decir, el conjunto de datos que graficaremos. Prueba escribir ggplot(data = cars) para graficar los datos de autos que hemos presentado anteriormente.
+  CorrectAnswer: ggplot(data = cars)
+  AnswerTests: omnitest(correctExpr='ggplot(data = cars)')
+  Hint: Prueba ejecutando el siguiente comando ggplot(data = cars)
+  
+- Class: cmd_question
+  Output: Verás que nada se ha graficado. Debemos indicarle con un nuevo argumento, qué variable irá en el eje de las x, y cuál en el eje de las y. Prueba indicar el argumento mapping = aes(x = dist, y = speed) para que en el eje de las x esté ubicada la distancia, y en el eje de las y lo haga la velocidad.
+  CorrectAnswer: ggplot(data = cars, mapping = aes(x = dist, y = speed))
+  AnswerTests: omnitest(correctExpr='ggplot(data = cars, mapping = aes(x = dist, y = speed))')
+  Hint: Intenta escribiendo ggplot(data = cars, mapping = aes(x = dist, y = speed))
+  
+- Class: cmd_question
+  Output: Ahora luce un poco mejor, pero siguen sin aparecer los datos. Para ello, debemos indicarle un geoms, es decir, un argumento que diga cómo se representan los datos en el gráfico. Para que se grafiquen como puntos, prueba agregar + geom_point() al final del código que utilizaste en el punto anterior.
+  CorrectAnswer: ggplot(data = cars, mapping = aes(x = dist, y = speed)) + geom_point()
+  AnswerTests: omnitest(correctExpr='ggplot(data = cars, mapping = aes(x = dist, y = speed)) + geom_point()')
+  Hint: Puedes lograr crear la gráfica con ggplot(data = cars, mapping = aes(x = dist, y = speed)) + geom_point()
+  
+- Class: text
+  Output: Existen varios tipos de geoms. geom_point() se utiliza para diagramas de dispersión, gráficos de puntos, entre otros. En cambio, geom_boxplot() se usa para diagramas de caja y bigotes. Por su parte, geom_line() para líneas de tendencias, series de tiempo, etc.  
+  
+- Class: cmd_question
+  Output: Cuando utilizamos el signo de '+', añadimos una capa nueva al gráfico. Esto nos permite realizar numerosos agregados y cambios en función de lo que necesitemos. Por ejemplo, para efectuar una transformación logarítmica sobre los datos en el eje x, prueba añadir esta capa al gráfico anterior scale_x_log10()
+  CorrectAnswer: ggplot(data = cars, mapping = aes(x = dist, y = speed)) + geom_point() + scale_x_log10()
+  AnswerTests: omnitest(correctExpr='ggplot(data = cars, mapping = aes(x = dist, y = speed)) + geom_point() + scale_x_log10()')
+  Hint: Al código de la pregunta anterior, agrégale + scale_x_log10()
+  
+- Class: cmd_question
+  Output: Una nueva capa nos permite ajustar una recta de regresión simple sobre la nube de puntos, agregando geom_smooth(method="lm"). Inténtalo.
+  CorrectAnswer: ggplot(data = cars, mapping = aes(x = dist, y = speed)) + geom_point() + scale_x_log10() + geom_smooth(method="lm")
+  AnswerTests: omnitest(correctExpr='ggplot(data = cars, mapping = aes(x = dist, y = speed)) + geom_point() + scale_x_log10() + geom_smooth(method="lm")')
+  Hint: Ahora deberás añadir + geom_smooth(method="lm") al código utilizado en la pregunta anterior.
+
+- Class: text
+  Output: Cada capa tiene lo que denominan aesthetics, que nos permiten modificar atributos estéticos en el gráfico. Por ejemplo, si quisiéramos que la línea de regresión anterior fuera más gruesa, podríamos utilizar geom_smooth(method="lm", size=1.5), de manera que modificamos a 1.5 este grosor.
+  
+- Class: text
+  Output: Otra modificación muy útil es el color. Podemos pedirle a R que pinte nuestros datos en función de una variable. Por ejemplo, si cuando definimos los ejes escribimos aes(x = dist, y = speed, color = speed), pintará nuestros datos según la columna speed, quedando puntos más claros u oscuros según el valor de la velocidad.
+  
+- Class: cmd_question
+  Output: Con la capa labs, modificaremos los títulos, ya que los que surgen por defecto no se ajustan a lo que queremos. Agrega la capa + labs(x = "Distancia", y = "Velocidad", title = "Figura 1",  color = "Velocidad") y la capa de color que vimos anteriormente.
+  CorrectAnswer: ggplot(data = cars, mapping = aes(x = dist, y = speed, color = speed)) + geom_point() + scale_x_log10() + geom_smooth(method="lm") + labs(x = "Distancia", y = "Velocidad", title = "Figura 1",  color = "Velocidad")
+  AnswerTests: omnitest(correctExpr='ggplot(data = cars, mapping = aes(x = dist, y = speed, color = speed)) + geom_point() + scale_x_log10() + geom_smooth(method="lm") + labs(x = "Distancia", y = "Velocidad", title = "Figura 1",  color = "Velocidad")')
+  Hint: Ejecuta el gráfico con el comando ggplot(data = cars, mapping = aes(x = dist, y = speed, color = speed)) + geom_point() + scale_x_log10() + geom_smooth(method="lm") + labs(x = "Distancia", y = "Velocidad", title = "Figura 1",  color = "Velocidad")
+
+- Class: cmd_question
+  Output: Excelente! El último paso será exportar nuestro gráfico. Para ello, primero debemos guardarlo en una variable, que denominaremos ‘grafico’. Inténtalo. 
+  CorrectAnswer: grafico <- ggplot(data = cars, mapping = aes(x = dist, y = speed, color = speed)) + geom_point() + scale_x_log10() + geom_smooth(method="lm") + labs(x = "Distancia", y = "Velocidad", title = "Figura 1",  color = "Velocidad")
+  AnswerTests: omnitest(correctExpr='grafico <- ggplot(data = cars, mapping = aes(x = dist, y = speed, color = speed)) + geom_point() + scale_x_log10() + geom_smooth(method="lm") + labs(x = "Distancia", y = "Velocidad", title = "Figura 1",  color = "Velocidad")')
+  Hint: Prueba con grafico <- ggplot(data = cars, mapping = aes(x = dist, y = speed, color = speed)) + geom_point() + scale_x_log10() + geom_smooth(method="lm") + labs(x = "Distancia", y = "Velocidad", title = "Figura 1",  color = "Velocidad")
+
+- Class: text
+  Output: La función ggsave() nos permitirá realizar la exportación. Ajustando sus argumentos (width, height y dpi) puedes crear gráficos de gran calidad listos para su publicación. El gráfico quedará en tu directorio de trabajo.
+
+- Class: cmd_question
+  Output: Utiliza el siguiente comando para realizar la exportación de nuestro gráfico ggsave(filename = "grafico.png", plot = grafico, width = 12, height = 10, dpi = 300, units = "cm")
+  CorrectAnswer: ggsave(filename = "grafico.png", plot = grafico, width = 12, height = 10, dpi = 300, units = "cm")
+  AnswerTests: omnitest(correctExpr='ggsave(filename = "grafico.png", plot = grafico, width = 12, height = 10, dpi = 300, units = "cm")')
+  Hint: Utiliza el siguiente comando para realizar la exportación de nuestro gráfico ggsave(filename = "grafico.png", plot = grafico, width = 12, height = 10, dpi = 300, units = "cm")
+ 
+- Class: text
+  Output: En esta lección has aprendido a realizar gráficos con calidad de publicación. Seguiremos profundizando en estos contenidos durante las próximas lecciones.
