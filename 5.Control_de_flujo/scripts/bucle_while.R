@@ -6,4 +6,6 @@ while(z < 10){ #El bucle se ejecuta mientras z sea menor a 10
   z <- z+2 #En cada paso, z se incrementa en dos unidades
 }
 
-#No es necesario que realices cambios en este script. Simplemente analiza y comprende el bucle.
+#No es necesario que realices cambios en este script. 
+#Simplemente analiza y comprende el bucle.
+#Luego, escribe submit() en la consola.

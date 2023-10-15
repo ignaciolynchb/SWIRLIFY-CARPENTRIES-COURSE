@@ -11,3 +11,5 @@ if (#condicion_1) {
 } else{
   print("mensaje apropiado")
 }
+
+#Guarda el script y escribe submit() en la consola.
