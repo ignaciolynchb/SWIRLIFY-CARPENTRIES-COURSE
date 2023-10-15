@@ -65,7 +65,7 @@
 
 - Class: script
   Output: Asegúrese de guardar el script antes de escribir submit().
-  AnswerTests: 
+  AnswerTests: bucle_while.R
   Hint: "Trabaje siguiendo las indicaciones proporcionadas en bucle_while.R"
   Script: bucle_while.R
   
