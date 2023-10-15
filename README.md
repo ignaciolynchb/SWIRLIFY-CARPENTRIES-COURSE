@@ -33,13 +33,11 @@ Los pasos anteriores se realizan una unica vez.
 Para comenzar a utilizar el curso:
 
 ```{r}
+library(swirl)
+select_language(language = "spanish")
 swirl()
 ```
 
-Se nos solicitará que nos identifiquemos con un nombre a efectos de almacenar nuestro rpogreso. Las primeras interacciones estan en inglés porque provienen del paquete swirl. Luego seleccionamos el curso _SWIRLIFY-CARPENTRIES-COURSE_ y seteamos el idioma español con el siguiente coódigo:
-
-```{r}
-select_language(language = "spanish")
-```
+Se nos solicitará que nos identifiquemos con un nombre a efectos de almacenar nuestro progreso. Luego seleccionamos el curso _SWIRLIFY-CARPENTRIES-COURSE_ y las lecciones que sean de nuestro interés.
 
 _El curso se encuentra en construcción, por lo que proximamente se incorporarán más lecciones asi como algunas mejoras para registrar el progreso d el estudiante._
