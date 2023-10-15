@@ -20,6 +20,54 @@
   
 - Class: script
   Output: Asegúrese de guardar el script antes de escribir submit().
-  AnswerTests: print("x es mayor o igual que 10")
+  AnswerTests: print(x)
   Hint: "En mi_primer_if.R, introduzca la condición apropiada."
   Script: mi_primer_if.R
+
+- Class: text
+  Output: La sentencia print “x es mayor o igual que 10” no aparece en la consola porque x no es mayor o igual a 10. Para imprimir un mensaje diferente para numeros menores a 10, podemos agregar una sentencia else
+
+- Class: text
+  Output: Trabajemos con "mi_primer_if_else.R"
+  
+- Class: script
+  Output: Asegúrese de guardar el script antes de escribir submit().
+  AnswerTests: print("x es menor a 10")
+  Hint: "En mi_primer_if.R, introduzca la condición apropiada."
+  Script: mi_primer_if_else.R
+  
+- Class: text
+  Output: También podemos testear múltiples condiciones usando else if. Trabajemos con "condiciones_multiples.R"  
+
+- Class: script
+  Output: Asegúrese de guardar el script antes de escribir submit().
+  AnswerTests: print("x es mayor a 5, pero menor a 10")
+  Hint: "Trabaje siguiendo las indicaciones proporcionadas en condiciones_multiples.R"
+  Script: condiciones_multiples.R
+  
+- Class: text
+  Output: Un concepto muy importante es que cuando R evalúa las condiciones dentro de if() esta buscando elementos lógicos como TRUE o FALSE. El resultado de evaluar dicha condicion debe ser un booleano.
+
+- Class: text
+  Output: Trabajaremos ahora con operaciones repetidas. Es muy común que queramos realizar una misma acción, un numero repetido de veces.
+  
+- Class: text
+  Output: Si quieres iterar sobre un conjunto de valores, el orden de la iteración es importante y debes realizar la misma operación en cada uno, un bucle for() es lo que estas buscando. 
+  
+- Class: script
+  Output: Asegúrese de guardar el script antes de escribir submit().
+  AnswerTests: for(i in 1:15){print(i*2)}
+  Hint: "Trabaje siguiendo las indicaciones proporcionadas en bucle_for.R"
+  Script: bucle_for.R
+  
+- Class: text
+  Output: Algunas veces tendrás la necesidad de repetir una operación hasta que cierta condición se cumpla. Puedes hacer esto con un bucle while().
+
+- Class: script
+  Output: Asegúrese de guardar el script antes de escribir submit().
+  AnswerTests: 
+  Hint: "Trabaje siguiendo las indicaciones proporcionadas en bucle_while.R"
+  Script: bucle_while.R
+  
+- Class: text
+  Output: Los bucles while() no siempre serán la elección apropiada. Debes ser particularmente cuidadoso de que tu condición se cumpla y no terminar en un bucle infinito.

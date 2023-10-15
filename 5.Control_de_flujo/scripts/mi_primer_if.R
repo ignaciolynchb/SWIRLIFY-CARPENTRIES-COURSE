@@ -8,6 +8,8 @@
 
 # Ahora, pongamoslo a prueba.
 
+#Digamos, por ejemplo, que queremos que R imprima un mensaje si una variable x tiene un valor en particular:
+
 #Reemplace "#condicion" por la condición apropiada.
 
 x <- 8
@@ -15,3 +17,5 @@ x <- 8
 if (#condicion) {
   print("x es mayor o igual que 10")
 }
+
+x
