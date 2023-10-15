@@ -1,0 +1,25 @@
+- Class: meta
+  Course: SWIRLIFY-CARPENTRIES-COURSE
+  Lesson: Control de flujo
+  Author: Ignacio Lynch
+  Type: Standard
+  Organization: FCEA-UDELAR
+  Version: 1.0.0
+
+- Class: text
+  Output: Bienvenido a la quinta lección de este curso, denominada `Control de flujo`.
+  
+- Class: text
+  Output: En esta lección, abordaremos dos situaciones muy comunes: ¿Cómo puedo hacer elecciones dependiendo de mis datos en R? ¿Cómo puedo repetir operaciones en R?
+
+- Class: text
+  Output: Cuando estamos programando puede que queramos controlar el flujo de nuestras acciones. Esto se puede realizar estableciendo acciones que ocurran solo si se cumple una condición o un conjunto de condiciones. A su vez, podemos hacer que una acción ocurra un número determinado de veces.
+
+- Class: text
+  Output: Construirás tu primer estructura de control utilizando "mi_primer_if.R"
+  
+- Class: script
+  Output: Asegúrese de guardar el script antes de escribir submit().
+  AnswerTests: print("x es mayor o igual que 10")
+  Hint: "En mi_primer_if.R, introduzca la condición apropiada."
+  Script: mi_primer_if.R
