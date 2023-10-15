@@ -1,6 +1,6 @@
 - Class: meta
   Course: SWIRLIFY-CARPENTRIES-COURSE
-  Lesson: Control de flujo
+  Lesson: 5.Control_de_flujo
   Author: Ignacio Lynch
   Type: Standard
   Organization: FCEA-UDELAR
@@ -10,7 +10,7 @@
   Output: Bienvenido a la quinta lección de este curso, denominada `Control de flujo`.
   
 - Class: text
-  Output: En esta lección, abordaremos dos situaciones muy comunes: ¿Cómo puedo hacer elecciones dependiendo de mis datos en R? ¿Cómo puedo repetir operaciones en R?
+  Output: En esta lección, abordaremos dos situaciones muy comunes. ¿Cómo puedo hacer elecciones dependiendo de mis datos en R? ¿Cómo puedo repetir operaciones en R?
 
 - Class: text
   Output: Cuando estamos programando puede que queramos controlar el flujo de nuestras acciones. Esto se puede realizar estableciendo acciones que ocurran solo si se cumple una condición o un conjunto de condiciones. A su vez, podemos hacer que una acción ocurra un número determinado de veces.
