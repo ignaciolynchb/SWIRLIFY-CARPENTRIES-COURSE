@@ -83,6 +83,7 @@ my_decode <- function(encoded) {
 }
 
 encoD <- registro_fn()
+
 encoD <-  encoD %>% 
   filter( curso == mi_curso) %>% 
   filter( Marca.temporal >= fecha_desde) %>% 
@@ -91,17 +92,14 @@ row.names(encoD) <- NULL
 dor <- my_decode( encoD )
 tiempo <-  as_datetime(dor$datetime)
 
-d <- dor
+d <- unique(dor[,c(1,3,5)])
 leccion <- d$lesson_name
 
 progreso <-  d %>% 
   group_by(user) %>% 
   summarise(
     estudiante = first(user),
-    dir.correo = first(dir.correo), 
     correctas = sum(correct, na.rm = TRUE), 
-    intentos = mean(attempt, na.rm=TRUE), 
-    saltea = sum(skipped, na.rm = TRUE)
   )
 
 dia <- day(today())
@@ -112,7 +110,6 @@ anio <- year(today())
 
 ```{r}
 xx <- progreso %>%
-  select(-dir.correo) |> 
   group_by(estudiante) %>%
   summarise( lecciones = sum( correctas ) ) 
 
@@ -129,8 +126,16 @@ En el campo **search** puedes escribir el nombre de un estudiante y ver en que l
 
 ```{r, results='asis'}
 detalle <- merge(encoD, dor, by.x="lg", by.y="dir.correo")
-detalle %>% 
-  filter( correct == TRUE) %>% 
-  select(user, lesson_name) %>% 
-  datatable(options = list(lengthMenu = c(15, 10) ) )
+detalle <-  detalle %>% 
+            filter( correct == TRUE) %>% 
+            select(user, lesson_name) %>% 
+            unique ()
+
+detalle_final <- data.frame( 
+    estudiante = detalle[,1], 
+    lección = detalle[,2]
+)
+
+detalle_final %>%
+   datatable(options = list(lengthMenu = c(15, 10) ) )
 ```
