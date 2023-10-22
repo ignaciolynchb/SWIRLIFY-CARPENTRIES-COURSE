@@ -51,7 +51,7 @@ Al completar cada lección, el estudiante tendrá la opcion de enviar automatica
 Podrás visualizar los resultados de todos los estudiantes que hayan completado lecciones bajo el nombre de curso proporcionado por ti. 
 
 Para ello, debes utilizar dos archivos:
-- "Parametros para informe de porgreso.txt": debes completar con los datos de tu interés.
+- "Parametros para informe de progreso.txt": debes completar con los datos de tu interés.
   1. mi_curso="nombre_mi_curso" #Nombre de tu curso, con el cual tus estudiantes enviaron su progreso
   2. fecha_desde="AAAA-MM-DD" #Fecha desde la cual quieres considerar el progreso de tus estudiantes
   3. fecha_hasta="AAAA-MM-DD" #Fecha hasta la cual quieres considerar el progreso de tus estudiantes
