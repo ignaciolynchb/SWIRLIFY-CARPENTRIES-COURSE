@@ -41,3 +41,8 @@ swirl()
 Se nos solicitará que nos identifiquemos con un nombre a efectos de almacenar nuestro progreso. Luego seleccionamos el curso _SWIRLIFY-CARPENTRIES-COURSE_ y las lecciones que sean de nuestro interés.
 
 _El curso se encuentra en construcción, por lo que proximamente se incorporarán más lecciones asi como algunas mejoras para registrar el progreso d el estudiante._
+
+**Soy responsable de un curso y quiero utilizar SWIRLIFY-CARPENTRIES-COURSE con mis estudiantes. ¿Cómo monitorear el progreso de mis estudiantes en el curso?**
+Al comenzar con SWIRL, se solicitará que el estudiante se identifique. Solicita a tus estudiantes que completen alli un nombre con el que puedas identificarlos!
+Al completar cada lección, el estudiante tendrá la opcion de enviar automaticamente su progreso a través de un Google Form, el cual se abrirá automaticamente y en el cual deberá responder la pregunta "¿Cual es tu curso?" con un nombre de curso proporcionado por ti. 
+Podrás visualizar los resultados de todos los estudiantes que hayan completado lecciones bajo el nombre de curso proporcionado por ti. 
