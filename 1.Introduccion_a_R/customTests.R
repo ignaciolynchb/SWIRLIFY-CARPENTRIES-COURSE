@@ -132,7 +132,7 @@ getLog <- function(){
 submit_log <- function(){
   
   # Please edit the link below
-  pre_fill_link <- "https://docs.google.com/forms/d/e/1FAIpQLScPX1rxKkqBmZ9TMhk5K7e9c-UJXUpcQsVIXAYwYM643DlJow/viewform?usp=sf_link"
+  pre_fill_link <- "https://docs.google.com/forms/d/e/1FAIpQLScPX1rxKkqBmZ9TMhk5K7e9c-UJXUpcQsVIXAYwYM643DlJow/viewform?usp=pp_url&entry.800499100="
   
   # Do not edit the code below
   if(!grepl("=$", pre_fill_link)){
@@ -155,6 +155,6 @@ submit_log <- function(){
                         stringsAsFactors = FALSE)
   write.csv(log_tbl, file = temp, row.names = FALSE)
   encoded_log <- base64encode(temp)
-  browseURL(paste0("prueba", pre_fill_link, encoded_log))
+  browseURL(paste0(pre_fill_link, encoded_log))
   
 }# So swirl does not repeat execution of commands
