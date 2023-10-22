@@ -1,2 +1,2 @@
-# prender el log
+# Activar el log
 swirl_options(swirl_logging = TRUE)

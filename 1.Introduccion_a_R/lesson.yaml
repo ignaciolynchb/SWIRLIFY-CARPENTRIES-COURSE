@@ -253,3 +253,10 @@
   CorrectAnswer: install.packages("ggplot2")
   AnswerTests: omnitest(correctExpr='install.packages("ggplot2")')
   Hint: Escriba 'install.packages("ggplot2")'.
+  
+- Class: mult_question
+  Output: ¿Deseas enviar tu progreso? 
+  AnswerChoices: Yes;No
+  CorrectAnswer: any_of_exprs('Yes', 'No', 1, 2)
+  AnswerTests: submit_log()
+  Hint: hint
