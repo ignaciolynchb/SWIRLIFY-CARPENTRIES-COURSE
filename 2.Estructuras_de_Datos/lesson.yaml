@@ -206,3 +206,10 @@
 
 - Class: text
   Output: En esta lección has aprendido a trabajar con vectores, matrices, dataframes, listas y factores. Seguiremos profundizando en estos contenidos durante las próximas lecciones.
+  
+- Class: mult_question
+  Output: ¿Deseas enviar tu progreso? 
+  AnswerChoices: Yes;No
+  CorrectAnswer: any_of_exprs('Yes', 'No', 1, 2)
+  AnswerTests: submit_log()
+  Hint: hint

@@ -26,6 +26,233 @@
   CorrectAnswer: 1+100
   AnswerTests: omnitest(correctExpr='1+100')
   Hint: Escriba 1+100 para que R calcule el resultado de la operacion.
+
+- Class: text
+  Output: R te mostrará la respuesta, precedido de un “[1]”. No te preocupes por esto por ahora, lo explicaremos más adelante. Por ahora piensa en eso como parte de la salida.
+
+- Class: text
+  Output: Si escribes un comando incompleto R esperará a que lo completes. Cada vez que presionas Enter y R te muestra un “+” en lugar de “>”, significa que está esperando que completes el comando. Si deseas cancelar un comando, simplemente presiona “Esc” y RStudio te devolverá el “>” prompt.
+
+- Class: text
+  Output: Cuando usas R como calculadora, el orden de las operaciones es el mismo que has aprendido en la escuela.
+
+- Class: cmd_question
+  Output: Escribe la operación matemática 3 + 5 * 2
+  CorrectAnswer: 3 + 5 * 2
+  AnswerTests: omnitest(correctExpr='3 + 5 * 2')
+  Hint: Escriba 3 + 5 * 2 para que R calcule el resultado de la operacion.
+  
+- Class: text
+  Output: Puedes notar que el resultado de esta operación es 13, ya que se aplican las reglas de precedencia que ya conoces de matemática.
+  
+- Class: text
+  Output: Usa paréntesis para agrupar las operaciones a fin de forzar el orden de la evaluación o para aclarar lo que deseas hacer.
+
+- Class: cmd_question
+  Output: Escribe la operación matemática (3 + 5) * 2
+  CorrectAnswer: (3 + 5) * 2
+  AnswerTests: omnitest(correctExpr='(3 + 5) * 2')
+  Hint: Escriba (3 + 5) * 2 para que R calcule el resultado de la operacion.
+
+- Class: text
+  Output: Puedes notar que el resultado de esta operación es 16, ya que los parentesis aclaran tus intenciones con esta operación.
+
+- Class: text
+  Output: Recuerda que puedes utilizar comentarios en el código. Los comentarios son texto que R ignorará, pero que pueden ser utiles para entender el código. La forma de escribir comentarios es utilizando el símbolo hash (o numeral).
+
+- Class: cmd_question
+  Output: Los números pequeños o grandes tienen una notación científica. Realiza la operacion 2/10000
+  CorrectAnswer: 2/10000
+  AnswerTests: omnitest(correctExpr='2/10000')
+  Hint: Escriba '2/10000' para que R calcule el resultado de la operacion.
+
+- Class: text
+  Output: Es la abreviatura de “multiplicado por 10 ^ XX”. Entonces 2e-4 es la abreviatura de 2 * 10^(-4).
+  
+- Class: text
+  Output: R tiene muchas funciones matemáticas integradas. Para llamar a una función, simplemente escribimos su nombre seguido de paréntesis ( ). Todo lo que escribas dentro de los paréntesis se llaman argumentos de la función.
+
+- Class: cmd_question
+  Output: Calcula el seno de 1, utilizando sin(1)
+  CorrectAnswer: sin(1)
+  AnswerTests: omnitest(correctExpr='sin(1)')
+  Hint: Escriba 'sin(1)' para que R calcule el resultado de la operacion.
+
+- Class: cmd_question
+  Output: Calcula el logaritmo de 10, utilizando log(10)
+  CorrectAnswer: log(10)
+  AnswerTests: omnitest(correctExpr='log(10)')
+  Hint: Escriba 'log(10)' para que R calcule el resultado de la operacion.
+  
+- Class: text
+  Output: Existen muchisimas funciones matematicas en R. No es necesario que las recuerdes a todas. Puedes Googlear o utilizar la ayuda de R.
+
+- Class: cmd_question
+  Output: Tambien podemos utilizar R para hacer comparaciones. Escribe 1 == 1
+  CorrectAnswer: 1 == 1
+  AnswerTests: omnitest(correctExpr='1 == 1')
+  Hint: Escriba '1 == 1' para que R compare.
+
+- Class: text
+  Output: Notar que el operador '==' está comparando si lo que se encuentra a la derecha de la igualdad, es igual a lo que está a la izquierda. El resultado de esta operación es TRUE (si son iguales) o FALSE (si son diferentes)
+
+- Class: text
+  Output: Puedes utilizar los operadores '>' y '<' para comparar. El operador '!=' significa "distinto" o "no es igual a")
+
+- Class: cmd_question
+  Output: Escribe 1 != 1
+  CorrectAnswer: 1 != 1
+  AnswerTests: omnitest(correctExpr='1 != 1')
+  Hint: Escriba '1 != 1' para que R compare.
+
+- Class: cmd_question
+  Output: Escribe 2 > 1
+  CorrectAnswer: 2 > 1
+  AnswerTests: omnitest(correctExpr='2 > 1')
+  Hint: Escriba '2 > 1' para que R compare.
+
+- Class: text
+  Output: Podemos almacenar valores en variables usando el operador de asignación <-.
+
+- Class: cmd_question
+  Output: Escribe x <- 1/40
+  CorrectAnswer: x <- 1/40
+  AnswerTests: omnitest(correctExpr='x <- 1/40')
+  Hint: Escriba 'x <- 1/40' para que R almacene información en el objeto 'x'.
+  
+- Class: text
+  Output: Observa que la asignación no muestra el valor. En cambio, lo almacena para más adelante en algo llamado variable. x ahora contiene el valor 0.025
+
+- Class: cmd_question
+  Output: Consulta la información almacenada escribiendo x
+  CorrectAnswer: x
+  AnswerTests: omnitest(correctExpr='x')
+  Hint: Escriba 'x' para que R muestre la información almacenada en el objeto 'x'.
+
+- Class: text
+  Output: Ten en cuenta que las variables pueden reasignarse, es decir, puedes cambiar el valor almacenado en la variable
+
+- Class: cmd_question
+  Output: Escribe x <- 100
+  CorrectAnswer: x <- 100
+  AnswerTests: omnitest(correctExpr='x <- 100')
+  Hint: Escriba 'x <- 100' para que R almacene información en el objeto 'x'.
+
+- Class: text
+  Output: x tenía el valor 0.025 y ahora tiene el valor 100.
+
+- Class: text
+  Output: También, los valores de asignación pueden contener la variable asignada.
+
+- Class: cmd_question
+  Output: Escribe x <- x + 1
+  CorrectAnswer: x <- x + 1
+  AnswerTests: omnitest(correctExpr='x <- x + 1')
+  Hint: Escriba 'x <- x + 1' para que R almacene nueva información en el objeto 'x'.
+
+- Class: text
+  Output: Observa cómo RStudio actualiza la descripción de x en la pestaña superior derecha. Ahora toma el valor 101, que es el resultado de sumarle una unidad al valor que anteriormente tenia x.
+  
+- Class: text
+  Output: El lado derecho de la asignación puede ser cualquier expresión de R válida. La expresión del lado derecho se evalúa por completo antes de que se realice la asignación.
+
+- Class: text
+  Output: Los nombres de las variables pueden contener letras, números, guiones bajos y puntos. No pueden comenzar con un número ni contener espacios en absoluto.
+
+- Class: mult_question
+  Output: De los siguientes ejemplos, ¿Cuáles es un nombre de variables válida en R?
+  AnswerChoices: min_height;_age;.mass;min-length;2widths;
+  CorrectAnswer: min_height
+  AnswerTests: omnitest(correctVal='min_height')
+  Hint: Los nombres de las variables pueden contener letras, números, guiones bajos y puntos. No pueden comenzar con un número ni contener espacios en absoluto.
+  
+- Class: text
+  Output: También es posible utilizar el operador = para la asignación.
+
+- Class: cmd_question
+  Output: Escribe x = 1/40
+  CorrectAnswer: x = 1/40
+  AnswerTests: omnitest(correctExpr='x = 1/40')
+  Hint: Escriba 'x = 1/40' para que R almacene información en el objeto 'x'.
+
+- Class: text
+  Output: No confundas '=' (asignacion) con '==' (comparación).
+
+- Class: text
+  Output: Trabajemos con vectores. Es muy importante tener en cuenta que R es vectorizado, lo que significa que las variables y funciones pueden tener vectores como valores y R puede operar en vectores completos a la vez. En contraste con los conceptos de vectores de física y matemáticas, un vector en R describe un conjunto de valores del mismo tipo de datos en un cierto orden.
+
+- Class: cmd_question
+  Output: Escribe 1:5
+  CorrectAnswer: 1:5
+  AnswerTests: omnitest(correctExpr='1:5')
+  Hint: Escriba '1:5'.
+
+- Class: text
+  Output: R muestra los valores naturales del 1 al 5. Esta información tambien puede ser guardada en un objeto.
+
+- Class: cmd_question
+  Output: Almacena los valores naturales del 1 al 5 en x
+  CorrectAnswer: x <- 1:5
+  AnswerTests: omnitest(correctExpr='x <- 1:5')
+  Hint: Escriba 'x <- 1:5'.
+  
+
+- Class: text
+  Output: Es posible administrar tu entorno de trabajo. Hay algunos comandos útiles que puedes usar para interactuar con la sesión de R.
+
+- Class: cmd_question
+  Output: Escribe ls()
+  CorrectAnswer: ls()
+  AnswerTests: omnitest(correctExpr='ls()')
+  Hint: Escriba 'ls()'.
+  
+- Class: text
+  Output: ls listará todas las variables y funciones almacenadas en el entorno global (tu sesión de trabajo en R).
+
+- Class: text
+  Output: Ten en cuenta que no se dió ningún argumento a ls, pero sí se necesita poner los paréntesis para decirle a R que llame a la función.
+
+- Class: cmd_question
+  Output: Puedes usar rm para eliminar objetos que ya no necesitas. Por ejemplo, rm(x)
+  CorrectAnswer: rm(x)
+  AnswerTests: omnitest(correctExpr='rm(x)')
+  Hint: Escriba 'rm(x)'.
+
+- Class: text
+  Output: Si tienes muchas cosas en tu entorno y deseas borrarlas todas, puedes pasar los resultados de ls y mandarlos a la función rm.
+
+- Class: cmd_question
+  Output: Escribe rm(list = ls())
+  CorrectAnswer: rm(list = ls())
+  AnswerTests: omnitest(correctExpr='rm(list = ls())')
+  Hint: Escriba 'rm(list = ls())'.
+
+- Class: text
+  Output: En este caso, hemos combinado los dos. Al igual que el orden de las operaciones, todo lo que se encuentre dentro de los paréntesis más internos se evalúa primero, y así sucesivamente.
+
+- Class: text
+  Output: Es posible agregar funciones a R escribiendo un paquete u obteniendo un paquete escrito por otra persona. Hay más de 10.000 paquetes disponibles en CRAN (la red completa de archivos R). R y RStudio tienen funcionalidad para administrar paquetes.
+
+- Class: text
+  Output: Puedes ver qué paquetes están instalados escribiendo installed.packages()
+  
+- Class: text
+  Output: Puedes instalar paquetes escribiendo install.packages("nombre_de_paquete")
+
+- Class: text
+  Output: Puedes actualizar los paquetes instalados escribiendo update.packages()
+
+- Class: text
+  Output: Puedes eliminar un paquete con remove.packages("nombre_de_paquete")
+
+- Class: text
+  Output: Puedes hacer que un paquete esté disponible para su uso con library(nombre_de_paquete)
+
+- Class: cmd_question
+  Output: Instala el paquete ggplot2
+  CorrectAnswer: install.packages("ggplot2")
+  AnswerTests: omnitest(correctExpr='install.packages("ggplot2")')
+  Hint: Escriba 'install.packages("ggplot2")'.
   
 - Class: mult_question
   Output: ¿Deseas enviar tu progreso? 

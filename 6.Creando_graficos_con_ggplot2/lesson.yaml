@@ -74,3 +74,10 @@
  
 - Class: text
   Output: En esta lección has aprendido a realizar gráficos con calidad de publicación. Seguiremos profundizando en estos contenidos durante las próximas lecciones.
+
+- Class: mult_question
+  Output: ¿Deseas enviar tu progreso? 
+  AnswerChoices: Yes;No
+  CorrectAnswer: any_of_exprs('Yes', 'No', 1, 2)
+  AnswerTests: submit_log()
+  Hint: hint
