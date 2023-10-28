@@ -1,6 +1,5 @@
 mi_grupo <- function(){
   my_group <- get("e", parent.frame())
-  print(my_group)
 }
 
 mi_progreso <- function(){
@@ -20,7 +19,7 @@ mi_progreso <- function(){
   }
   
   progress$reported_at <- Sys.time()
-  progress$group <- my_group
+  progress$group <- "aaaa"
   write.csv(progress, "progress.csv")
 }
 

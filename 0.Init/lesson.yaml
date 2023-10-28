@@ -30,7 +30,7 @@
 - Class: cmd_question
   Output: Si respondiste si a la pregunta anterior, escribe su nombre
   CorrectAnswer: any_of_exprs(1:10000000)
-  AnswerTests: a=mi_grupo()
+  AnswerTests: mi_grupo()
 
 - Class: mult_question
   Output: ¿Deseas enviar tu progreso? 
