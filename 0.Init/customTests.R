@@ -19,6 +19,8 @@ mi_progreso <- function(){
   }
   
   progress$reported_at <- Sys.time()
+  progress$group <- my_group
+  write.csv(progress, "progress.csv")
 }
 
 notify <- function() {
