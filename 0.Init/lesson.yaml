@@ -26,10 +26,19 @@
   CorrectAnswer: 1+100
   AnswerTests: omnitest(correctExpr='1+100')
   Hint: Escriba 1+100 para que R calcule el resultado de la operacion.
-  
+
+
 - Class: mult_question
   Output: ¿Deseas enviar tu progreso? 
   AnswerChoices: Yes;No
   CorrectAnswer: any_of_exprs('Yes', 'No', 1, 2)
-  AnswerTests: submit_log()
+  AnswerTests: mi_progreso()
   Hint: hint
+
+- Class: mult_question
+  Output: ¿Tienes un grupo  asignado?
+  AnswerChoices: Yes;No
+  CorrectAnswer: any_of_exprs('Yes', 'No', 1, 2)
+  
+- Class: cmd_question
+  Output: Si respondiste si a la pregunta anterior, escribe su nombre
