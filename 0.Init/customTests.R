@@ -1,6 +1,6 @@
 mi_grupo <- function(){
   my_group <- get("e", parent.frame())
-  write.csv(my_group, "group.csv")
+  print(my_group)
 }
 
 mi_progreso <- function(){
