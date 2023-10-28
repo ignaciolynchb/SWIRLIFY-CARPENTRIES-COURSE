@@ -1,5 +1,5 @@
 mi_progreso <- function(){
-  my_group <- e$expr
+  my_group <- "e$expr"
   temp <- tempfile()
   temp_hasta <- unlist(gregexpr('file', temp))
   r_temp <- substring(temp,1,last=temp_hasta-2)
