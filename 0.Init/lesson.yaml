@@ -36,5 +36,5 @@
 
 - Class: cmd_question
   Output: Si respondiste si a la pregunta anterior, escribe su nombre
-  CorrectAnswer: any_of_exprs('Yes', 'No', 1, 2)
+  CorrectAnswer: any_of_exprs(1:10000000)
   AnswerTests: mi_grupo()

@@ -1,0 +1,3 @@
+"","user","course_name","lesson_name","question_number","correct","attempt","skipped","datetime","reported_at"
+"1","Hola","SWIRLIFY-CARPENTRIES-COURSE","1.Introduccion_a_R",6,TRUE,1,FALSE,1698455362.00344,2023-10-28 00:19:04
+"2","Hola","SWIRLIFY-CARPENTRIES-COURSE","1.Introduccion_a_R",7,NA,1,NA,1698455365.17921,2023-10-28 00:19:04
