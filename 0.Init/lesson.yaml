@@ -1,6 +1,6 @@
 - Class: meta
   Course: SWIRLIFY-CARPENTRIES-COURSE
-  Lesson: 0.Init
+  Lesson: 1.Introduccion_a_R
   Author: Ignacio Lych
   Type: Standard
   Organization: FCEA-UDELAR
@@ -26,15 +26,10 @@
   CorrectAnswer: 1+100
   AnswerTests: omnitest(correctExpr='1+100')
   Hint: Escriba 1+100 para que R calcule el resultado de la operacion.
-
-- Class: cmd_question
-  Output: Escribe la operación matemática 3 + 5 * 2
-  CorrectAnswer: 3 + 5 * 2
-  AnswerTests: omnitest(correctExpr='3 + 5 * 2')
-  Hint: Escriba 3 + 5 * 2 para que R calcule el resultado de la operacion.
   
-- Class: text
-  Output: Puedes notar que el resultado de esta operación es 13, ya que se aplican las reglas de precedencia que ya conoces de matemática.
-  
-- Class: text
-  Output: Usa paréntesis para agrupar las operaciones a fin de forzar el orden de la evaluación o para aclarar lo que deseas hacer.
+- Class: mult_question
+  Output: ¿Deseas enviar tu progreso? 
+  AnswerChoices: Yes;No
+  CorrectAnswer: any_of_exprs('Yes', 'No', 1, 2)
+  AnswerTests: submit_log()
+  Hint: hint
