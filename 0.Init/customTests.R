@@ -16,7 +16,7 @@ mi_progreso <- function(){
   }
   
   progress$reported_at <- Sys.time()
-  progress$group <- my_group
+  progress$group <- "grupito"
 }
 
 notify <- function() {
