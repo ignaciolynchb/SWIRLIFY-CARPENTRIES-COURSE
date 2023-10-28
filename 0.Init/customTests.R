@@ -1,3 +1,7 @@
+mi_grupo <- function(){
+  grupo <- e$current.row
+}
+
 mi_progreso <- function(){
   ####my_group <- "e$expr"
   temp <- tempfile()

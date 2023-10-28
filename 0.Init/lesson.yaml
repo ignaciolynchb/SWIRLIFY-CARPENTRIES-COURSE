@@ -42,3 +42,4 @@
   
 - Class: cmd_question
   Output: Si respondiste si a la pregunta anterior, escribe su nombre
+  AnswerTests: mi_grupo()
