@@ -1,9 +1,8 @@
 mi_grupo <- function(){
-  grupo <- e$current.row
+  my_group <- get("e", parent.frame())
 }
 
 mi_progreso <- function(){
-  ####my_group <- "e$expr"
   temp <- tempfile()
   temp_hasta <- unlist(gregexpr('file', temp))
   r_temp <- substring(temp,1,last=temp_hasta-2)
@@ -20,7 +19,6 @@ mi_progreso <- function(){
   }
   
   progress$reported_at <- Sys.time()
-  progress$group <- "grupito"
 }
 
 notify <- function() {

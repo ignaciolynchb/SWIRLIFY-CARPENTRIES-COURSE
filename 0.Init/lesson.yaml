@@ -34,12 +34,7 @@
   CorrectAnswer: any_of_exprs('Yes', 'No', 1, 2)
   AnswerTests: mi_progreso()
 
-- Class: mult_question
-  Output: ¿Tienes un grupo asignado?
-  AnswerChoices: Yes;No
-  CorrectAnswer: any_of_exprs('Yes', 'No', 1, 2)
-  AnswerTests: mi_progreso()
-
 - Class: cmd_question
   Output: Si respondiste si a la pregunta anterior, escribe su nombre
+  CorrectAnswer: any_of_exprs('Yes', 'No', 1, 2)
   AnswerTests: mi_grupo()
