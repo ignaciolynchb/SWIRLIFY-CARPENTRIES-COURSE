@@ -1,3 +1,26 @@
+mi_progreso_sheet <- function(){
+  temp <- tempfile()
+  temp_hasta <- unlist(gregexpr('file', temp))
+  r_temp <- substring(temp,1,last=temp_hasta-2)
+  fl = list.files(r_temp, full.names = TRUE)
+  colnames_esperado <- c("user","course_name","lesson_name","question_number","correct","attempt","skipped","datetime")
+  for (i in fl){
+    if(tools::file_ext(i)=="" & unlist(gregexpr('graph', i))==-1){
+      archivo <- read.csv(i)
+      cabezal <- colnames(archivo)
+      if(identical(cabezal,colnames_esperado)){
+        progreso <- read.csv(i)
+        file.copy(from=i, to=paste0(system.file(package = "swirl"),"/Courses/SWIRLIFY-CARPENTRIES-COURSE/Progress"))
+        file.remove(i)
+      }
+    }
+  }
+  progreso$reported_at <- Sys.time()
+  progreso$group <- mi_grupo
+  ss <- "1LI-82639iAKy7LrymSFI6Xw_FrjnrOfFUolaCTDAU_g"
+  googlesheets4::sheet_append(ss, progreso, sheet = 1)
+}
+
 notify <- function() {
   e <- get("e", parent.frame())
   if(e$val == "No") return(TRUE)
@@ -155,5 +178,5 @@ submit_log <- function(){
                         stringsAsFactors = FALSE)
   if(length(log_tbl)!=0){write.csv(log_tbl, file = temp, row.names = FALSE)}
   encoded_log <- base64encode(temp)
-
+  mi_progreso_sheet()
 }# So swirl does not repeat execution of commands

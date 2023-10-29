@@ -1,2 +1,2 @@
 mi_curso,fecha_desde,fecha_hasta
-"nombre_mi_curso","AAAA-MM-DD", "AAAA-MM-DD"
+"nombre_mi_grupo","AAAA-MM-DD", "AAAA-MM-DD"

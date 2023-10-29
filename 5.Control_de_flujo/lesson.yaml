@@ -72,9 +72,14 @@
 - Class: text
   Output: Los bucles while() no siempre serán la elección apropiada. Debes ser particularmente cuidadoso de que tu condición se cumpla y no terminar en un bucle infinito.
 
+- Class: script
+  Output: ¿Tienes un grupo asignado? Trabaja con el script llamado mi_grupo. Asegúrese de guardar el script antes de escribir submit().
+  AnswerTests: expr_creates_var(correctName = "mi_grupo")
+  Hint: Escribe submit() para continuar
+  Script: mi_grupo.R
+  
 - Class: mult_question
   Output: ¿Deseas enviar tu progreso? 
   AnswerChoices: Yes;No
   CorrectAnswer: any_of_exprs('Yes', 'No', 1, 2)
   AnswerTests: submit_log()
-  Hint: hint
