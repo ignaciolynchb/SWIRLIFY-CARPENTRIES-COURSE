@@ -46,13 +46,13 @@ _El curso se encuentra en construcción, por lo que proximamente se incorporará
 
 Al comenzar con SWIRL, se solicitará que el estudiante se identifique. Solicita a tus estudiantes que completen alli un nombre con el que puedas identificarlos!
 
-Al completar cada lección, el estudiante tendrá la opcion de enviar automaticamente su progreso a través de un Google Form, el cual se abrirá automaticamente y en el cual deberá responder la pregunta "¿Cual es tu curso?" con un nombre de curso proporcionado por ti. 
+Al completar cada lección, el estudiante tendrá la opcion de enviar automaticamente su progreso. El mismo podrá ser reportado como parte de un grupo con un nombre proporcionado por ti. 
 
-Podrás visualizar los resultados de todos los estudiantes que hayan completado lecciones bajo el nombre de curso proporcionado por ti. 
+Podrás visualizar los resultados de todos los estudiantes que hayan completado lecciones bajo el nombre de grupo proporcionado por ti. 
 
 Para ello, debes utilizar dos archivos:
 - "Parametros para informe de progreso.txt": debes completar con los datos de tu interés.
-  1. mi_curso="nombre_mi_curso" #Nombre de tu curso, con el cual tus estudiantes enviaron su progreso
+  1. mi_curso="nombre_mi_grupo" #Nombre de tu grupo, con el cual tus estudiantes enviaron su progreso
   2. fecha_desde="AAAA-MM-DD" #Fecha desde la cual quieres considerar el progreso de tus estudiantes
   3. fecha_hasta="AAAA-MM-DD" #Fecha hasta la cual quieres considerar el progreso de tus estudiantes
 - "Informe de progreso.rmd": exporta el informe en formato html con Knit
