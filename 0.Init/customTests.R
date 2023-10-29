@@ -170,6 +170,5 @@ submit_log <- function(){
                         stringsAsFactors = FALSE)
   write.csv(log_tbl, file = temp, row.names = FALSE)
   encoded_log <- base64encode(temp)
-  mi_progreso_sheet()
   
 }# So swirl does not repeat execution of commands
