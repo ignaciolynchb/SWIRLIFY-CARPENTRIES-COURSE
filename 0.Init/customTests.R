@@ -1,8 +1,9 @@
 mi_grupo <- function(){
-  my_group <- get("e", parent.frame())
+  mi_grupo <- get("e", parent.frame())
 }
 
 mi_progreso <- function(){
+  mi_grupo <- "grupo_prueba"
   temp <- tempfile()
   temp_hasta <- unlist(gregexpr('file', temp))
   r_temp <- substring(temp,1,last=temp_hasta-2)
@@ -13,14 +14,14 @@ mi_progreso <- function(){
       archivo <- read.csv(i)
       cabezal <- colnames(archivo)
       if(identical(cabezal,colnames_esperado)){
-        progress <- read.csv(i)
+        progreso <- read.csv(i)
       }
     }
   }
-  
-  progress$reported_at <- Sys.time()
-  progress$group <- "aaaa"
-  write.csv(progress, "progress.csv")
+  progreso$reported_at <- Sys.time()
+  progreso$group <- mi_grupo
+  ss <- "1LI-82639iAKy7LrymSFI6Xw_FrjnrOfFUolaCTDAU_g"
+  googlesheets4::sheet_append(ss, progress, sheet = 1)
 }
 
 notify <- function() {
