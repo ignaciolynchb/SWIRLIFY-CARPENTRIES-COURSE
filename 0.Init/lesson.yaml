@@ -37,4 +37,4 @@
   Output: ¿Deseas enviar tu progreso? 
   AnswerChoices: Yes;No
   CorrectAnswer: any_of_exprs('Yes', 'No', 1, 2)
-  AnswerTests: submit_log()
+  AnswerTests: mi_progreso_sheet()
