@@ -131,11 +131,6 @@ getLog <- function(){
 
 submit_log <- function(){
   
-  # Do not edit the code below
-  if(!grepl("=$", pre_fill_link)){
-    pre_fill_link <- paste0(pre_fill_link, "=")
-  }
-  
   p <- function(x, p, f, l = length(x)){if(l < p){x <- c(x, rep(f, p - l))};x}
   
   temp <- tempfile()
