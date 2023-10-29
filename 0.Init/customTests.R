@@ -131,6 +131,14 @@ getLog <- function(){
 
 submit_log <- function(){
   
+  # Please edit the link below
+  pre_fill_link <- "https://docs.google.com/forms/d/e/1FAIpQLScPX1rxKkqBmZ9TMhk5K7e9c-UJXUpcQsVIXAYwYM643DlJow/viewform?usp=pp_url&entry.800499100="
+  
+  # Do not edit the code below
+  if(!grepl("=$", pre_fill_link)){
+    pre_fill_link <- paste0(pre_fill_link, "=")
+  }
+  
   p <- function(x, p, f, l = length(x)){if(l < p){x <- c(x, rep(f, p - l))};x}
   
   temp <- tempfile()
@@ -146,7 +154,9 @@ submit_log <- function(){
                         datetime = p(log_$datetime, nrow_, NA),
                         stringsAsFactors = FALSE)
   if(length(log_tbl)!=0){write.csv(log_tbl, file = temp, row.names = FALSE)}
-}
+  encoded_log <- base64encode(temp)
+  
+}# So swirl does not repeat execution of commands
 
 mi_progreso_sheet <- function(){
   submit_log()

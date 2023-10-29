@@ -153,8 +153,7 @@ submit_log <- function(){
                         skipped = p(log_$skipped, nrow_, NA),
                         datetime = p(log_$datetime, nrow_, NA),
                         stringsAsFactors = FALSE)
-  write.csv(log_tbl, file = temp, row.names = FALSE)
+  if(length(log_tbl)!=0){write.csv(log_tbl, file = temp, row.names = FALSE)}
   encoded_log <- base64encode(temp)
-  browseURL(paste0(pre_fill_link, encoded_log))
-  
+
 }# So swirl does not repeat execution of commands
