@@ -28,10 +28,11 @@
   Hint: Escriba 1+100 para que R calcule el resultado de la operacion.
 
 - Class: cmd_question
-  Output: Si respondiste si a la pregunta anterior, escribe su nombre
-  CorrectAnswer: any_of_exprs(1:10000000)
-  AnswerTests: mi_grupo()
-
+  Output: ¿Tienes un grupo asignado? Trabaja con el script llamado mi_grupo.
+  AnswerTests: expr_creates_var(correctName = "mi_grupo")
+  Hint: Escribe submit() para continuar
+  Script: mi_grupo.R
+  
 - Class: mult_question
   Output: ¿Deseas enviar tu progreso? 
   AnswerChoices: Yes;No

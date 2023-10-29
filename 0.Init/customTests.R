@@ -1,9 +1,4 @@
-mi_grupo <- function(){
-  mi_grupo <- get("e", parent.frame())
-}
-
 mi_progreso <- function(){
-  mi_grupo <- "grupo_prueba"
   temp <- tempfile()
   temp_hasta <- unlist(gregexpr('file', temp))
   r_temp <- substring(temp,1,last=temp_hasta-2)
@@ -15,13 +10,15 @@ mi_progreso <- function(){
       cabezal <- colnames(archivo)
       if(identical(cabezal,colnames_esperado)){
         progreso <- read.csv(i)
+        file.copy(from=i, to=paste0(system.file(package = "swirl"),"/Courses/SWIRLIFY-CARPENTRIES-COURSE/Progress"))
+        file.remove(i)
       }
     }
   }
-  progreso$reported_at <- Sys.time()
-  progreso$group <- mi_grupo
-  ss <- "1LI-82639iAKy7LrymSFI6Xw_FrjnrOfFUolaCTDAU_g"
-  googlesheets4::sheet_append(ss, progress, sheet = 1)
+progreso$reported_at <- Sys.time()
+progreso$group <- mi_grupo
+ss <- "1LI-82639iAKy7LrymSFI6Xw_FrjnrOfFUolaCTDAU_g"
+googlesheets4::sheet_append(ss, progress, sheet = 1)
 }
 
 notify <- function() {
