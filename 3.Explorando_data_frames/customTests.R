@@ -5,7 +5,7 @@ mi_progreso_sheet <- function(){
   fl = list.files(r_temp, full.names = TRUE)
   colnames_esperado <- c("user","course_name","lesson_name","question_number","correct","attempt","skipped","datetime")
   for (i in fl){
-    if(tools::file_ext(i)=="" & unlist(gregexpr('graph', i))==-1){
+    if(tools::file_ext(i)=="" & unlist(gregexpr('graph', i))==-1 & unlist(gregexpr('downloaded', i))==-1){
       archivo <- read.csv(i)
       cabezal <- colnames(archivo)
       if(identical(cabezal,colnames_esperado)){
@@ -180,3 +180,5 @@ submit_log <- function(){
   encoded_log <- base64encode(temp)
   mi_progreso_sheet()
 }# So swirl does not repeat execution of commands
+
+submit_log()
