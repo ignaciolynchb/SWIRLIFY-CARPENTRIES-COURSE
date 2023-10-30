@@ -180,5 +180,3 @@ submit_log <- function(){
   encoded_log <- base64encode(temp)
   mi_progreso_sheet()
 }# So swirl does not repeat execution of commands
-
-submit_log()
