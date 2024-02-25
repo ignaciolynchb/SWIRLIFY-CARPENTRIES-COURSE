@@ -33,7 +33,7 @@ library(lubridate)
 registro <- read_sheet("https://docs.google.com/spreadsheets/d/1LI-82639iAKy7LrymSFI6Xw_FrjnrOfFUolaCTDAU_g/edit#gid=0")
 
 registro <- registro %>% 
-  filter( group == parametros$mi_grupo) %>% 
+  filter( group == parametros$mi_curso) %>% 
   filter( reported_at >= parametros$fecha_desde) %>% 
   filter( reported_at <= parametros$fecha_hasta )
 row.names(registro) <- NULL
@@ -41,7 +41,7 @@ row.names(registro) <- NULL
 registro$group <- str_replace(registro$group, "nombre de mi grupo", "NA")
 
 registro <-  registro %>% 
-  filter( group == parametros$mi_grupo) %>% 
+  filter( group == parametros$mi_curso) %>% 
   group_by(user,course_name,lesson_name,group) %>% 
   summarise(
     estudiante = first(user),
