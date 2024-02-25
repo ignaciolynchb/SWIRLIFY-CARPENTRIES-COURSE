@@ -5,7 +5,7 @@ Curso de R en español, basado en los contenidos de [Carpentries]([https://githu
 
 **Descripción**
 
-El paquete [SWIRL] (http://swirlstats.com/)("Learn R, in R") permite crear cursos interactivos que se ejecutan desde la propia consola de R. Tienen la ventaja de que el estudiante puede ejecutar la instrucciones directamente en R en la medida que avanza su curso. 
+El paquete [SWIRL] (http://swirlstats.com/) ("Learn R, in R") permite crear cursos interactivos que se ejecutan desde la propia consola de R. Tienen la ventaja de que el estudiante puede ejecutar la instrucciones directamente en R en la medida que avanza su curso. 
 
 El curso se organiza en lecciones ordenadas, aunque el estudiante podrá seleccionar las lecciones que sean de su interés.
 
