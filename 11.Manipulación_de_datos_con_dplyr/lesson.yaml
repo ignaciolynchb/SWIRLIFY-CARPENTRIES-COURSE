@@ -1,0 +1,91 @@
+- Class: meta
+  Course: My_New_Course
+  Lesson: Manipulación de datos con dplyr
+  Author: Mauricio García
+  Type: Standard
+  Organization: FCEA-UDELAR
+  Version: 1.0.0
+
+- Class: text
+  Output: Bienvenido a la undécima lección de este curso, denominada `Manipulación de datos con dplyr`.
+  
+- Class: text
+  Output: En esta lección nos enfocaremos en la manipulación de Data Frames, con el paquete dplyr. Deberemos cargarlo previamente con el comando library("dplyr"), aunque en esta lección ya está precargado.
+
+- Class: text
+  Output: Veremos seis de las funciones más usadas en este paquete, además del uso de los pipes (%>%).
+
+- Class: text
+  Output: La primera función en la que haremos hincapié será select(). Esta nos permite seleccionar las variables que nos interesen para trabajar. 
+
+- Class: text
+  Output: Recordemos que, en lecciones anteriores, estuvimos trabajando con los datos gapminder, que contenían información sobre distintos países.
+  
+- Class: cmd_question
+  Output: Échale un vistazo a los datos gapminder, que hemos descargado para ti.
+  CorrectAnswer: gapminder
+  AnswerTests: omnitest(correctExpr='gapminder')
+  Hint: Prueba ejecutando el siguiente comando gapminder
+
+- Class: text
+  Output: Recordemos que tiene 6 columnas, el país, el continente, el año, la esperanza de vida, la población y el PIB per cápita.
+  
+- Class: text
+  Output: Imagina ahora que queremos una nueva tabla que contenga solamente el año, el país y la renta per cápita.
+  
+- Class: cmd_question
+  Output:  Prueba entonces con el siguiente comando, gapminder %>% select(year,country,gdpPercap)
+  CorrectAnswer: gapminder %>% select(year,country,gdpPercap)
+  AnswerTests: omnitest(correctExpr='gapminder %>% select(year,country,gdpPercap)')
+  Hint: Prueba entonces con el siguiente comando, gapminder %>% select(year,country,gdpPercap)
+
+- Class: text
+  Output: Primero hemos llamado al Data Frame gapminder, y utilizando select() hemos seleccionado las columnas de nuestro interés. El símbolo pipe %>% nos ha ayudado a encadenar la función select() al dataset, observa que gapminder no es un argumento de la función. Esta será la principal ventaja del uso de dplyr junto con los pipes, debido a que evita las repeticiones en el código y por lo tanto, las posibilidades de error.
+  
+- Class: cmd_question
+  Output: Imagina que ahora quieres los datos queden filtrados para el continente europeo. Podremos combinar select() con la función filter(). Prueba con el comando gapminder %>% filter(continent=="Europe") %>% select(year,country,gdpPercap)
+  CorrectAnswer: gapminder %>% filter(continent=="Europe") %>% select(year,country,gdpPercap)
+  AnswerTests: omnitest(correctExpr='gapminder %>% filter(continent=="Europe") %>% select(year,country,gdpPercap)')
+  Hint: Escribe gapminder %>% filter(continent=="Europe") %>% select(year,country,gdpPercap)
+  
+- Class: text
+  Output: Primero hemos llamado al Data Frame gapminder, y utilizando filter() hemos seleccionado las filas de nuestro interés (las que corresponden a Europa). El símbolo pipe %>% nos ha ayudado a encadenar la función select() al dataset, seleccionando las variables (o columnas) que nos interesan.
+  
+- Class: cmd_question
+  Output: Podríamos ahora querer que nos indique la media de una variable (por ejemplo el PIB per cápita) agrupada por continente. Esto lo conseguiremos utilizando conjuntamente las funciones group_by() y summarize(). Prueba con gapminder %>% group_by(continent) %>% summarize(mean_gdpPercap=mean(gdpPercap))
+  CorrectAnswer: gapminder %>% group_by(continent) %>% summarize(mean_gdpPercap=mean(gdpPercap))
+  AnswerTests: omnitest(correctExpr='gapminder %>% group_by(continent) %>% summarize(mean_gdpPercap=mean(gdpPercap))')
+  Hint: Escribe gapminder %>% group_by(continent) %>% summarize(mean_gdpPercap=mean(gdpPercap))
+
+- Class: text
+  Output: En este caso, primero hemos llamado al Data Frame gapminder, y utilizando group_by() hemos agrupado las filas por continente. El símbolo pipe %>% nos ha ayudado a encadenar la función summarize() al dataset, con la que hemos creado la columna mean_gdpPercap que recaba los datos de la media (mean) de la columnam gdpPercap. Notar que como hemos usado antes group_by, el cálculo ya se realiza por continente.
+ 
+- Class: text
+  Output: Dplyr contiene dos funciones muy interesantes, count() y n() que permiten contar números de observaciones.
+   
+- Class: cmd_question
+  Output: Queremos saber ahora cuántos países hay en el año 2002. Recuerda que cada fila contiene un país. Prueba entonces con gapminder %>% filter(year == 2002) %>% count(continent, sort = TRUE)
+  CorrectAnswer: gapminder %>% filter(year == 2002) %>% count(continent, sort = TRUE)
+  AnswerTests: omnitest(correctExpr='gapminder %>% filter(year == 2002) %>% count(continent, sort = TRUE)')
+  Hint: Prueba con gapminder %>% filter(year == 2002) %>% count(continent, sort = TRUE)
+
+- Class: text
+  Output: Como verás, los datos quedaron presentados en orden descendente. Esto es porque hemos incluído el argumento sort=TRUE dentro de la función count().
+  
+- Class: text
+  Output: Si necesitamos usar estos números para hacer cálculos, allí usaremos la función n(). 
+  
+- Class: text
+  Output: En esta lección has aprendido a utilizar el paquete dplyr. Seguiremos profundizando en estos contenidos durante las próximas lecciones.
+
+- Class: script
+  Output: ¿Tienes un grupo asignado? Trabaja con el script llamado mi_grupo. Asegúrese de guardar el script antes de escribir submit().
+  AnswerTests: expr_creates_var(correctName = "mi_grupo")
+  Hint: Escribe submit() para continuar
+  Script: mi_grupo.R
+  
+- Class: mult_question
+  Output: ¿Deseas enviar tu progreso? 
+  AnswerChoices: Yes;No
+  CorrectAnswer: any_of_exprs('Yes', 'No', 1, 2)
+  AnswerTests: submit_log()
