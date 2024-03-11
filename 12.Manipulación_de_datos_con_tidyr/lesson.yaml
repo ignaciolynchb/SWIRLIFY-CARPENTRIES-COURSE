@@ -1,0 +1,82 @@
+- Class: meta
+  Course: My_New_Course
+  Lesson: Manipulación de datos con tidyr
+  Author: Mauricio García
+  Type: Standard
+  Organization: FCEA-UDELAR
+  Version: 1.0.0
+
+- Class: text
+  Output: Bienvenido a la duodécima y última lección de este curso, denominada `Manipulación de datos con tidyr`.
+  
+- Class: text
+  Output: En esta lección nos enfocaremos en la manipulación de Data Frames, con el paquete tidyr. Para esta lección debemos cargar previamente con el comando library() los paquetes tidyr y dplyr, aunque en esta lección ya están precargados.
+
+- Class: text
+  Output: Comencemos con algunas definiciones. En la organización de los datos, debemos distinguir los que están en formato largo de los que están en formato ancho.
+
+- Class: text
+  Output: El formato ancho implica que cada fila es un individuo o unidad (por ejemplo, una persona) y cada columna es una variable. Entonces tendremos, por ejemplo, una fila para Juan, y en cada columna tendremos su altura, peso, lugar de residencia, entre otros.
+
+- Class: text
+  Output: El formato largo implica tener una columna para la variable observada, y las demás columnas son variables de identificación (ID). Por ejemplo, tendremos tres columnas, Nombre, Variable y Valor. Y tendremos para Juan una fila que tome los valores Juan, Peso, 79. Otra fila que tome los valores Juan, Altura, 180, y así sucesivamente. Tendremos varias filas para la misma unidad.
+
+- Class: text
+  Output: Para las personas, el formato ancho suele ser el más intuitivo, pero el formato largo es más legible para las máquinas. La función pivot que contiene tidyr es muy poderosa y nos permitirá jugar con estos conceptos.
+
+- Class: cmd_question
+  Output: Échale un vistazo a los datos relig_income, que vienen pre cargados dentro de la librería tidyr.
+  CorrectAnswer: relig_income
+  AnswerTests: omnitest(correctExpr='relig_income')
+  Hint: Prueba ejecutando el siguiente comando relig_income
+
+- Class: text
+  Output: En este caso, los datos muestran una encuesta donde se le consulta a las personas sobre su religión e ingresos anuales. Podemos ver que en cada fila está la religión, y en cada columna un tramo de ingresos.
+
+- Class: text
+  Output: Sin embargo, podríamos preferir tener una única columna de ingresos, y una fila por cada tramo.  
+  
+- Class: cmd_question
+  Output:  Probemos con el siguiente código relig_income %>% pivot_longer(cols = !religion, names_to = "income", values_to = "count")
+  CorrectAnswer: relig_income %>% pivot_longer(cols = !religion, names_to = "income", values_to = "count")
+  AnswerTests: omnitest(correctExpr='relig_income %>% pivot_longer(cols = !religion, names_to = "income", values_to = "count")')
+  Hint: Prueba entonces con el siguiente comando, relig_income %>% pivot_longer(cols = !religion, names_to = "income", values_to = "count")
+
+- Class: text
+  Output: Primero hemos llamado al Data Frame relig_income, y utilizando la función pivot_longer() hemos seleccionado la columna de nuestro interés (a través del argumento cols, la religión). El símbolo pipe %>% nos ha ayudado a encadenar la función pivot_longer() al dataset. La nueva columna se llamará income (argumento names_to) y los valores que contendrán estarán en una columna llamada count (values_to).
+
+- Class: cmd_question
+  Output: Échale ahora un vistazo a los datos fish_encounters, que vienen pre cargados dentro de la librería tidyr.
+  CorrectAnswer: fish_encounters
+  AnswerTests: omnitest(correctExpr='fish_encounters')
+  Hint: Prueba ejecutando el siguiente comando fish_encounters
+
+- Class: text
+  Output: En este caso, los datos muestran la detección de peces por parte de una estación de monitoreo.
+
+- Class: text
+  Output: Sin embargo, podríamos preferir tener una única columna para cada estación, y una fila para cada tipo de pez.
+  
+- Class: cmd_question
+  Output:  Probemos con el siguiente código fish_encounters %>% pivot_wider(names_from = station, values_from = seen)
+  CorrectAnswer: fish_encounters %>% pivot_wider(names_from = station, values_from = seen)
+  AnswerTests: omnitest(correctExpr='fish_encounters %>% pivot_wider(names_from = station, values_from = seen)')
+  Hint: Prueba entonces con el siguiente comando, fish_encounters %>% pivot_wider(names_from = station, values_from = seen)
+
+- Class: text
+  Output: Primero hemos llamado al Data Frame fish_encounters, y utilizando la función pivot_wider() hemos seleccionado la columna de nuestro interés (que queremos que se desglose, a través del argumento names_from). El símbolo pipe %>% nos ha ayudado a encadenar la función pivot_wider() al dataset. Los valores provendrán de la columna seen, a través del argumento values_from.
+
+- Class: text
+  Output: En esta lección has aprendido a utilizar una función muy imporante del paquete tidyr. Con los conocimientos que hemos adquirido podremos iniciarnos en el mundo del análisis de datos.
+
+- Class: script
+  Output: ¿Tienes un grupo asignado? Trabaja con el script llamado mi_grupo. Asegúrese de guardar el script antes de escribir submit().
+  AnswerTests: expr_creates_var(correctName = "mi_grupo")
+  Hint: Escribe submit() para continuar
+  Script: mi_grupo.R
+  
+- Class: mult_question
+  Output: ¿Deseas enviar tu progreso? 
+  AnswerChoices: Yes;No
+  CorrectAnswer: any_of_exprs('Yes', 'No', 1, 2)
+  AnswerTests: submit_log()
