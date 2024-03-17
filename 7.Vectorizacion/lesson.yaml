@@ -21,7 +21,7 @@
 - Class: cmd_question
   Output: Multiplique a x por 2
   CorrectAnswer: x*2
-  AnswerTests: omnitest(correctExpr='x*2')
+  AnswerTests: omnitest(correctVal='x*2')
   Hint: Utilice el simbolo "*" para multiplicar
   
 - Class: text
@@ -31,13 +31,13 @@
 - Class: cmd_question
   Output: También podemos sumar dos vectores juntos. Cree un vector llamado y que contenga los naturales del 5 al 8
   CorrectAnswer: y <- 5:8
-  AnswerTests: omnitest(correctExpr='y <- 5:8')
+  AnswerTests: omnitest(correctVal='y <- 5:8')
   Hint: y debe contener los naturales de 5 a 8 inclusive. Para crearlo, use el operador ":"
   
 - Class: cmd_question
   Output: Sume los vectores x e y 
   CorrectAnswer: x+y
-  AnswerTests: omnitest(correctExpr='x+y')
+  AnswerTests: omnitest(correctVal='x+y')
   Hint: Realice la operación x+y
 
 - Class: text
@@ -46,7 +46,7 @@
 - Class: cmd_question
   Output: Los operadores de comparación, operadores lógicos y muchas otras funciones también están vectorizadas. Escriba x > 2
   CorrectAnswer: x > 2
-  AnswerTests: omnitest(correctExpr='x > 2')
+  AnswerTests: omnitest(correctVal='x > 2')
   Hint: Realice la operación x > 2
 
 - Class: text
