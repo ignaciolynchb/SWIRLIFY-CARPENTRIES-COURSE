@@ -17,7 +17,7 @@
   
 - Class: script
   Output: La siguiente función recibe dos parametros (a y b) y devuelve la suma de ambos.
-  AnswerTests: expr_creates_var(correctName = "mi_grupo")
+  AnswerTests: expr_creates_var(correctName = "my_sum")
   Hint: Escribe submit() para continuar
   Script: my_sum.R
   
