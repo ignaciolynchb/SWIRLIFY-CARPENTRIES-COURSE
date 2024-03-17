@@ -24,7 +24,7 @@
 - Class: cmd_question
   Output: Exporta el dataframe llamado df_iris, con ese nombre y extension .xlsx. No especifiques una ruta de tu computadora, a efectos de que sea guardado en el lugar por defecto.
   CorrectAnswer: write.table(df_iris, "df_iris.xlsx")
-  AnswerTests: omnitest(file.exists("df_iris.xlsx"))
+  AnswerTests: file.exists("df_iris.xlsx")
   Hint: Utiliza write.table(df_iris, "df_iris.xlsx") para guardar el dataframe 
 
 - Class: script
