@@ -15,7 +15,7 @@
 - Class: cmd_question
   Output: Veamos un ejemplo. Genera un vector llamado x, que contenga los naturales de 1 a 4. Utiliza el operador ":"
   CorrectAnswer: x <- 1:4
-  AnswerTests: var_is_a('numeric', 'x');omnitest(correctExpr = 'x <- 1:4'
+  AnswerTests: var_is_a('numeric', 'x');omnitest(correctExpr = 'x <- 1:4')
   Hint: x debe contener los naturales de 1 a 4 inclusive. Para crearlo, use el operador ":"
 
 - Class: cmd_question
