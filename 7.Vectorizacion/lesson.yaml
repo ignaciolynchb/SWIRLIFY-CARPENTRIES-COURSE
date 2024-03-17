@@ -15,7 +15,7 @@
 - Class: cmd_question
   Output: Veamos un ejemplo. Genera un vector llamado x, que contenga los naturales de 1 a 4. Utiliza el operador ":"
   CorrectAnswer: x <- 1:4
-  AnswerTests: val_has_length(4);expr_creates_var(correctName = 'x')
+  AnswerTests: val_has_length(4);expr_creates_var(correctName = 'x');calculates_same_value('x <- 1:4')
   Hint: x debe contener los naturales de 1 a 4 inclusive. Para crearlo, use el operador ":"
 
 - Class: cmd_question
@@ -27,17 +27,16 @@
 - Class: text
   Output: ¿Qué ocurrió? La multiplicación se aplicó a cada elemento del vector.
 
-
 - Class: cmd_question
   Output: También podemos sumar dos vectores juntos. Cree un vector llamado y que contenga los naturales del 5 al 8
   CorrectAnswer: y <- 5:8
-  AnswerTests: calculates_same_value('y <- 5:8')
+  AnswerTests: val_has_length(4);expr_creates_var(correctName = 'y');calculates_same_value('y <- 5:8')
   Hint: y debe contener los naturales de 5 a 8 inclusive. Para crearlo, use el operador ":"
   
 - Class: cmd_question
   Output: Sume los vectores x e y 
   CorrectAnswer: x+y
-  AnswerTests: calculates_same_value('x+y')
+  AnswerTests: calculates_same_value('c(6,8,10,12')
   Hint: Realice la operación x+y
 
 - Class: text
