@@ -1,0 +1,65 @@
+- Class: meta
+  Course: SWIRLIFY-CARPENTRIES-COURSE
+  Lesson: 7.Vectorizacion
+  Author: Ignacio Lych
+  Type: Standard
+  Organization: FCEA-UDELAR
+  Version: 1.0.0
+
+- Class: text
+  Output: El objetivo de esta lección es entender que la mayoría de las operaciones en R están vectorizadas. ¿Qué significa?
+
+- Class: text
+  Output: Significa que la función operará sobre todos los elementos de un vector sin necesidad de hacer un bucle a través de cada elemento y actuar sobre cada uno de ellos. Esto hace la escritura de código más concisa, fácil de leer y menos propenso a errores.
+  
+- Class: cmd_question
+  Output: Veamos un ejemplo. Genera un vector llamado x, que contenga los naturales de 1 a 4. Utiliza el operador ":"
+  CorrectAnswer: x <- 1:4
+  AnswerTests: omnitest(correctExpr='x <- 1:4')
+  Hint: x debe contener los naturales de 1 a 4 inclusive. Para crearlo, use el operador ":"
+
+- Class: cmd_question
+  Output: Multiplique a x por 2
+  CorrectAnswer: x*2
+  AnswerTests: omnitest(correctExpr='x*2')
+  Hint: Utilice el simbolo "*" para multiplicar
+  
+- Class: text
+  Output: ¿Qué ocurrió? La multiplicación se aplicó a cada elemento del vector.
+
+
+- Class: cmd_question
+  Output: También podemos sumar dos vectores juntos. Cree un vector llamado y que contenga los naturales del 5 al 8
+  CorrectAnswer: y <- 5:8
+  AnswerTests: omnitest(correctExpr='y <- 5:8')
+  Hint: y debe contener los naturales de 5 a 8 inclusive. Para crearlo, use el operador ":"
+  
+- Class: cmd_question
+  Output: Sume los vectores x e y 
+  CorrectAnswer: x+y
+  AnswerTests: omnitest(correctExpr='x+y')
+  Hint: Realice la operación x+y
+
+- Class: text
+  Output: Como puedes ver, cada elemento de x fue sumado a su correspondiente elemento de y
+
+- Class: cmd_question
+  Output: Los operadores de comparación, operadores lógicos y muchas otras funciones también están vectorizadas. Escriba x > 2
+  CorrectAnswer: x > 2
+  AnswerTests: omnitest(correctExpr='x > 2')
+  Hint: Realice la operación x > 2
+
+- Class: text
+  Output: Puedes notar que la comparación se da elemento a elemento de x
+
+- Class: script
+  Output: ¿Tienes un grupo asignado? Trabaja con el script llamado mi_grupo. Asegúrese de guardar el script antes de escribir submit().
+  AnswerTests: expr_creates_var(correctName = "mi_grupo")
+  Hint: Escribe submit() para continuar
+  Script: mi_grupo.R
+  
+- Class: mult_question
+  Output: ¿Deseas enviar tu progreso? 
+  AnswerChoices: Yes;No
+  CorrectAnswer: any_of_exprs('Yes', 'No', 1, 2)
+  AnswerTests: submit_log()
