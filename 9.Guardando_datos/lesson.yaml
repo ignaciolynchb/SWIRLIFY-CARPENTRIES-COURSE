@@ -10,10 +10,10 @@
   Output: El objetivo de esta lección es que puedas ser capaz de guardar datos desde R.
 
 - Class: cmd_question
-  Output: Trabajemos con un dataframe de R llamado iris. Cargalo con data(iris) 
-  CorrectAnswer: data(iris)
-  AnswerTests: expr_creates_var(correctName = 'iris')
-  Hint: Utiliza data(iris) para cargar el dataframe 
+  Output: Trabajemos con un dataframe de R llamado iris. Cargalo en un objeto llamado df_iris 
+  CorrectAnswer: df_iris <- iris
+  AnswerTests: expr_creates_var(correctName = 'df_iris')
+  Hint: Utiliza df_iris <- iris para cargar el dataframe 
 
 - Class: text
   Output: Utilizaremos write.table para guardar dicha información en un archivo Excel en tu computadora. Puedes ayudarte visualizando la ayuda de write.table
