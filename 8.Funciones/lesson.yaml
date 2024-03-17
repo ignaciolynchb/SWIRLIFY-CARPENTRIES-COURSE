@@ -1,0 +1,43 @@
+- Class: meta
+  Course: SWIRLIFY-CARPENTRIES-COURSE
+  Lesson: 7.Funciones
+  Author: Ignacio Lych
+  Type: Standard
+  Organization: FCEA-UDELAR
+  Version: 1.0.0
+
+- Class: text
+  Output: El objetivo de esta lección es aprender a definir en R tus propias funciones y utilizarlas especificando sus parámetros. 
+  
+- Class: text
+  Output: ¿Qué es una función? Son una secuencia de operaciones, que se almacenan para ser utilizadas de forma rápida y simple en cualquier momento.
+
+- Class: text
+  Output: Las funciones tienen tres elementos básicos (un nombre, un input y un output). Trabajemos con un ejemplo. 
+  
+- Class: script
+  Output: La siguiente función recibe dos parametros (a y b) y devuelve la suma de ambos.
+  AnswerTests: expr_creates_var(correctName = "mi_grupo")
+  Hint: Escribe submit() para continuar
+  Script: my_sum.R
+  
+- Class: text
+  Output: Como puedes ver, se ha generado en el entorno de trabajo una función llamada my_sum
+
+- Class: cmd_question
+  Output: Pongamosla a prueba. Utiliza my_sum, especificandole 2 y 5 como inputs
+  CorrectAnswer: my_sum(2,5)
+  AnswerTests: omnitest(correctExpr='my_sum(2,5)')
+  Hint: Escribe "my_sum(2,5)" para utilizar la función 
+
+- Class: script
+  Output: ¿Tienes un grupo asignado? Trabaja con el script llamado mi_grupo. Asegúrese de guardar el script antes de escribir submit().
+  AnswerTests: expr_creates_var(correctName = "mi_grupo")
+  Hint: Escribe submit() para continuar
+  Script: mi_grupo.R
+  
+- Class: mult_question
+  Output: ¿Deseas enviar tu progreso? 
+  AnswerChoices: Yes;No
+  CorrectAnswer: any_of_exprs('Yes', 'No', 1, 2)
+  AnswerTests: submit_log()
