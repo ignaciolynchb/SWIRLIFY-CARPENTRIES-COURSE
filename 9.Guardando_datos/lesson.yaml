@@ -20,20 +20,3 @@
 
 - Class: text
   Output: Como verás, R permite exportar datos en una gran cantidad de formatos (xlsx, csv, txt, etc.) y podrás personalizar la forma en que estos se almacenan.
-  
-- Class: cmd_question
-  Output: Exporta el dataframe llamado iris, con ese nombre y extension .xlsx. No especifiques una ruta de tu computadora, a efectos de que sea guardado en el lugar por defecto.
-  CorrectAnswer: write.table(iris, "iris.xlsx")
-  Hint: Utiliza write.table(iris, "iris.xlsx") para guardar el dataframe 
-  
-- Class: script
-  Output: ¿Tienes un grupo asignado? Trabaja con el script llamado mi_grupo. Asegúrese de guardar el script antes de escribir submit().
-  AnswerTests: expr_creates_var(correctName = "mi_grupo")
-  Hint: Escribe submit() para continuar
-  Script: mi_grupo.R
-  
-- Class: mult_question
-  Output: ¿Deseas enviar tu progreso? 
-  AnswerChoices: Yes;No
-  CorrectAnswer: any_of_exprs('Yes', 'No', 1, 2)
-  AnswerTests: submit_log()
