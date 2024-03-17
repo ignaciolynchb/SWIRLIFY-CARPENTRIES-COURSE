@@ -36,7 +36,7 @@
 - Class: cmd_question
   Output: Sume los vectores x e y 
   CorrectAnswer: x+y
-  AnswerTests: calculates_same_value('c(6,8,10,12')
+  AnswerTests: calculates_same_value('c(6,8,10,12)')
   Hint: Realice la operación x+y
 
 - Class: text
