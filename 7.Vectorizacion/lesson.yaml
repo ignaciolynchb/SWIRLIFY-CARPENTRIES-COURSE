@@ -15,7 +15,7 @@
 - Class: cmd_question
   Output: Veamos un ejemplo. Genera un vector llamado x, que contenga los naturales de 1 a 4. Utiliza el operador ":"
   CorrectAnswer: x <- 1:4
-  AnswerTests: calculates_same_value('x <- 1:4')
+  AnswerTests: val_has_length(4);expr_creates_var(correctName = 'x')
   Hint: x debe contener los naturales de 1 a 4 inclusive. Para crearlo, use el operador ":"
 
 - Class: cmd_question
