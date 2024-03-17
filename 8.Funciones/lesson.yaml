@@ -1,6 +1,6 @@
 - Class: meta
   Course: SWIRLIFY-CARPENTRIES-COURSE
-  Lesson: 7.Funciones
+  Lesson: 8.Funciones
   Author: Ignacio Lych
   Type: Standard
   Organization: FCEA-UDELAR
@@ -29,6 +29,18 @@
   CorrectAnswer: my_sum(2,5)
   AnswerTests: omnitest(correctExpr='my_sum(2,5)')
   Hint: Escribe "my_sum(2,5)" para utilizar la función 
+
+- Class: script
+  Output: Trabaja en el script hasta crear la función correcta.
+  AnswerTests: expr_creates_var(correctName = "kelvin_celsius")
+  Hint: Escribe submit() para continuar
+  Script: kelvin_celsius.R
+
+- Class: cmd_question
+  Output: Utiliza kelvin_celsius para convertir la temperatura 282° Kelvin a Celsius
+  CorrectAnswer: kelvin_celsius(282)
+  AnswerTests: omnitest(correctExpr='kelvin_celsius(282)');calculates_same_value('8.85')
+  Hint: Escribe "kelvin_celsius(282)" para utilizar la función 
 
 - Class: script
   Output: ¿Tienes un grupo asignado? Trabaja con el script llamado mi_grupo. Asegúrese de guardar el script antes de escribir submit().
