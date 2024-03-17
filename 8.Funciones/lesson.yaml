@@ -46,22 +46,16 @@
   Output: Puedes ver cómo las funciones proporcionan una manera eficiente de hacer que el código R sea reutilizable y modular.
   
 - Class: text
-  Output: Debemos tener en cuenta que es importante garantizar que las funciones solo funcionen en los casos de uso previstos. Por ejemplo, la funcion que acabas de crear solo funcionará si el parámetro de entrada es un numero. 
+  Output: Debemos tener en cuenta que es importante garantizar que las funciones solo funcionen en los casos de uso previstos. Por ejemplo, la funcion que acabas de crear solo funcionará apropiadamente si el parámetro de entrada es un numero. 
   
 - Class: text
   Output: Esto nos introduce al concepto de programación defensiva. La programación defensiva nos alienta a probar las condiciones frecuentemente y arrojar un error si algo está mal. 
 
 - Class: script
-  Output: Trabaja en el script.
+  Output: Trabaja en el script kelvin_celsius_defensive.R
   AnswerTests: expr_creates_var(correctName = "kelvin_celsius_defensive")
   Hint: Escribe submit() para continuar
   Script: kelvin_celsius_defensive.R
-
-- Class: cmd_question
-  Output: Utiliza kelvin_celsius_defensive para intentar convertir la temperatura "uno" a Celsius
-  CorrectAnswer: kelvin_celsius("uno")
-  AnswerTests: omnitest(correctExpr='kelvin_celsius("uno")')
-  Hint: Escribe 'kelvin_celsius("uno")' para utilizar la función 
 
 - Class: text
   Output: La programacion defensiva ha funcionado y ha evitado que la función se utilice con un input invalido.
