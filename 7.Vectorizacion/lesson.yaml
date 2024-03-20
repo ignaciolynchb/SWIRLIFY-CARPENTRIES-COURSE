@@ -7,6 +7,9 @@
   Version: 1.0.0
 
 - Class: text
+  Output: Bienvenido a la séptima lección de este curso, denominada 'Vectorización'.
+  
+- Class: text
   Output: El objetivo de esta lección es entender que la mayoría de las operaciones en R están vectorizadas. ¿Qué significa?
 
 - Class: text
@@ -50,6 +53,9 @@
 
 - Class: text
   Output: Puedes notar que la comparación se da elemento a elemento de x
+
+- Class: text
+  Output: En esta lección has aprendido más sobre el funcionamiento de los vectores. Seguiremos profundizando el estudio de este objeto en las próximas lecciones.
 
 - Class: script
   Output: ¿Tienes un grupo asignado? Trabaja con el script llamado mi_grupo. Asegúrese de guardar el script antes de escribir submit().
