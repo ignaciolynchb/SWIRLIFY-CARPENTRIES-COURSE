@@ -7,8 +7,14 @@
   Version: 1.0.0
 
 - Class: text
-  Output: A esta altura de nuestro curso, ya viste los tipos y estructuras de datos básicos de R y todo lo que hagas va a ser una manipulación de esas herramientas. Ahora pasaremos a aprender un par de cosas sobre cómo trabajar con la clase data frame (la estructura de datos que usarás la mayoría del tiempo y que será la estrella del show). Un data frame es la tabla que creamos al cargar información de un archivo csv.
-
+  Output: Bienvenido a la tercera lección de este curso, denominada 'Explorando Data Frames'.
+  
+- Class: text
+  Output: Aquí veremos como trabajar con Data Frames, estudiando su creación, manipulación y análisis.
+  
+- Class: text
+  Output: Hasta ahora, hemos visto tipos y estructuras de datos básicos de R. Todo lo que hagas en R va a ser una manipulación de esas herramientas. Ahora aprenderemos sobre cómo trabajar con la clase de datos Data Frame (la estructura de datos que usarás la mayoría del tiempo y que será la estrella del show). Un Data Frame es la tabla que creamos al cargar información de un archivo csv.
+  
 - Class: text
   Output: Veamos como agregar columnas y filas a un data frame. Aprendimos que las columnas en un data frame son vectores. Por lo tanto, sabemos que nuestros datos son consistentes con el tipo de dato dentro de esa columna. Si queremos agregar una nueva columna, podemos empezar por crear un nuevo vector.
 
@@ -133,25 +139,28 @@
   Output: La funcion str(nombre_del_dataframe) nos muestra la composición de un dataframe. Utilizala
   CorrectAnswer: str(gapminder)
   AnswerTests: omnitest(correctExpr='str(gapminder)')
-  Hint: str(nombre_del_dataframe)
+  Hint: Prueba con str(nombre_del_dataframe)
   
 - Class: cmd_question
   Output: La funcion colnames(nombre_del_dataframe) nos permite conocer el nombre de sus columnas. Utilizala
   CorrectAnswer: colnames(gapminder)
   AnswerTests: omnitest(correctExpr='colnames(gapminder)')
-  Hint: colnames(nombre_del_dataframe)
+  Hint: Escribe colnames(nombre_del_dataframe)
 
 - Class: cmd_question
   Output: La funcion dim(nombre_del_dataframe) nos permite conocer la cantidad de filas y columnas. Utilizala
   CorrectAnswer: dim(gapminder)
   AnswerTests: omnitest(correctExpr='dim(gapminder)')
-  Hint: dim(nombre_del_dataframe)
+  Hint: Intenta con dim(nombre_del_dataframe)
 
 - Class: cmd_question
   Output: La funcion head(nombre_del_dataframe) nos permite visualizar las primeras 6 filas de nuestro dataframe. Utilizala
   CorrectAnswer: head(gapminder)
   AnswerTests: omnitest(correctExpr='head(gapminder)')
-  Hint: head(nombre_del_dataframe)
+  Hint: Puedes probar con head(nombre_del_dataframe)
+
+- Class: text
+  Output: En esta lección has aprendido a trabajar con Data Frames. Seguiremos profundizando el estudio de este objeto en las próximas lecciones.
 
 - Class: script
   Output: ¿Tienes un grupo asignado? Trabaja con el script llamado mi_grupo. Asegúrese de guardar el script antes de escribir submit().
