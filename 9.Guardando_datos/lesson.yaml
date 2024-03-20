@@ -7,6 +7,9 @@
   Version: 1.0.0
 
 - Class: text
+  Output: Bienvenido a la novena lección de este curso, denominada 'Guardando datos'.
+
+- Class: text
   Output: El objetivo de esta lección es que puedas ser capaz de guardar datos desde R.
 
 - Class: cmd_question
@@ -20,6 +23,9 @@
 
 - Class: text
   Output: Como verás, R permite exportar datos en una gran cantidad de formatos (xlsx, csv, txt, etc.) y podrás personalizar la forma en que estos se almacenan.
+
+- Class: text
+  Output: En esta lección has aprendido a guardar tus datos en R. Seguiremos profundizando el estudio de este objeto en las próximas lecciones.
   
 - Class: cmd_question
   Output: Exporta el dataframe llamado df_iris, con ese nombre y extension .xlsx. No especifiques una ruta de tu computadora, a efectos de que sea guardado en el lugar por defecto.
