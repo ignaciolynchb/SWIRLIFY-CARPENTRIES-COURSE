@@ -77,6 +77,9 @@
   AnswerTests: expr_creates_var(correctName = "mi_grupo")
   Hint: Escribe submit() para continuar
   Script: mi_grupo.R
+
+- Class: text
+  Output: En esta lección has aprendido a trabajar con bucles y estructuras de control. Seguiremos profundizando el estudio de este objeto en las próximas lecciones.
   
 - Class: mult_question
   Output: ¿Deseas enviar tu progreso? 
