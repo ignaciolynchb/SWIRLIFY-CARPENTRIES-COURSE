@@ -1,6 +1,6 @@
 - Class: meta
   Course: SWIRLIFY-CARPENTRIES-COURSE
-  Lesson: 0.Probando_SWIRL
+  Lesson: Probando_SWIRL
   Author: Ignacio Lych
   Type: Standard
   Organization: FCEA-UDELAR
@@ -14,13 +14,7 @@
   CorrectAnswer: 1+100
   AnswerTests: omnitest(correctExpr='1+100')
   Hint: Escriba 1+100 para que R calcule el resultado de la operacion.
-  
-- Class: script
-  Output: ¿Tienes un grupo asignado? Trabaja con el script llamado mi_grupo. Asegúrese de guardar el script antes de escribir submit().
-  AnswerTests: expr_creates_var(correctName = "mi_grupo")
-  Hint: Escribe submit() para continuar
-  Script: mi_grupo.R
-  
+    
 - Class: mult_question
   Output: ¿Deseas enviar tu progreso? 
   AnswerChoices: Yes;No
