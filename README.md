@@ -38,21 +38,6 @@ select_language(language = "spanish")
 swirl()
 ```
 
-Se nos solicitará que nos identifiquemos con un nombre a efectos de almacenar nuestro progreso. Luego seleccionamos el curso _SWIRLIFY-CARPENTRIES-COURSE_ y las lecciones que sean de nuestro interés.
+Se nos solicitará que nos identifiquemos con un nombre. Luego seleccionamos el curso _SWIRLIFY-CARPENTRIES-COURSE_ y las lecciones que sean de nuestro interés.
 
-_El curso se encuentra en construcción, por lo que proximamente se incorporarán más lecciones asi como algunas mejoras para registrar el progreso d el estudiante._
-
-**Soy responsable de un curso y quiero utilizar SWIRLIFY-CARPENTRIES-COURSE con mis estudiantes. ¿Cómo monitorear el progreso de mis estudiantes en el curso?**
-
-Al comenzar con SWIRL, se solicitará que el estudiante se identifique. Solicita a tus estudiantes que completen alli un nombre con el que puedas identificarlos!
-
-Al completar cada lección, el estudiante tendrá la opcion de enviar automaticamente su progreso. El mismo podrá ser reportado como parte de un grupo con un nombre proporcionado por ti. 
-
-Podrás visualizar los resultados de todos los estudiantes que hayan completado lecciones bajo el nombre de grupo proporcionado por ti. 
-
-Para ello, debes utilizar dos archivos:
-- "Parametros para informe de progreso.txt": debes completar con los datos de tu interés.
-  1. mi_curso="nombre_mi_grupo" #Nombre de tu grupo, con el cual tus estudiantes enviaron su progreso
-  2. fecha_desde="AAAA-MM-DD" #Fecha desde la cual quieres considerar el progreso de tus estudiantes
-  3. fecha_hasta="AAAA-MM-DD" #Fecha hasta la cual quieres considerar el progreso de tus estudiantes
-- "Informe de progreso.rmd": exporta el informe en formato html con Knit
+Al finalizar cada lección, se nos consultará si queremos enviar nuestro progreso. En ese caso, se abrirá en el navegador un formulario precompletado, al que unicamente debes completarle tu nombre o identificador y el grupo de estudio al que perteneces (en caso de que se te haya asignado uno).
