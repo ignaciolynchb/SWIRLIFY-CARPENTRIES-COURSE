@@ -1,2 +1,0 @@
-mi_curso,fecha_desde,fecha_hasta
-"nombre_mi_grupo","AAAA-MM-DD", "AAAA-MM-DD"

@@ -1,26 +1,3 @@
-mi_progreso_sheet <- function(){
-  temp <- tempfile()
-  temp_hasta <- unlist(gregexpr('file', temp))
-  r_temp <- substring(temp,1,last=temp_hasta-2)
-  fl = list.files(r_temp, full.names = TRUE)
-  colnames_esperado <- c("user","course_name","lesson_name","question_number","correct","attempt","skipped","datetime")
-  for (i in fl){
-    if(tools::file_ext(i)=="" & unlist(gregexpr('graph', i))==-1 & unlist(gregexpr('downloaded', i))==-1){
-      archivo <- read.csv(i)
-      cabezal <- colnames(archivo)
-      if(identical(cabezal,colnames_esperado)){
-        progreso <- read.csv(i)
-        file.copy(from=i, to=paste0(system.file(package = "swirl"),"/Courses/SWIRLIFY-CARPENTRIES-COURSE/Progress"))
-        file.remove(i)
-      }
-    }
-  }
-  progreso$reported_at <- Sys.time()
-  progreso$group <- mi_grupo
-  ss <- "1LI-82639iAKy7LrymSFI6Xw_FrjnrOfFUolaCTDAU_g"
-  googlesheets4::sheet_append(ss, progreso, sheet = 1)
-}
-
 notify <- function() {
   e <- get("e", parent.frame())
   if(e$val == "No") return(TRUE)
@@ -75,40 +52,40 @@ hrule <- function() {
 notify <- function() {
   e <- get("e", parent.frame())
   if(e$val == "No") return(TRUE)
-  
+
   good <- FALSE
   while(!good) {
     # Get info
     name <- readline_clean("What is your full name? ")
     address <- readline_clean("What is the email address of the person you'd like to notify? ")
-    
+
     # Repeat back to them
     message("\nDoes everything look good?\n")
     message("Your name: ", name, "\n", "Send to: ", address)
-    
+
     yn <- select.list(c("Yes", "No"), graphics = FALSE)
     if(yn == "Yes") good <- TRUE
   }
-  
+
   # Get course and lesson names
   course_name <- attr(e$les, "course_name")
   lesson_name <- attr(e$les, "lesson_name")
-  
+
   subject <- paste(name, "just completed", course_name, "-", lesson_name)
   body = ""
-  
+
   # Send email
   swirl:::email(address, subject, body)
-  
+
   hrule()
   message("I just tried to create a new email with the following info:\n")
   message("To: ", address)
   message("Subject: ", subject)
   message("Body: <empty>")
-  
+
   message("\nIf it didn't work, you can send the same email manually.")
   hrule()
-  
+
   # Return TRUE to satisfy swirl and return to course menu
   TRUE
 }
@@ -155,8 +132,8 @@ getLog <- function(){
 submit_log <- function(){
   
   # Please edit the link below
-  pre_fill_link <- "https://docs.google.com/forms/d/e/1FAIpQLScPX1rxKkqBmZ9TMhk5K7e9c-UJXUpcQsVIXAYwYM643DlJow/viewform?usp=pp_url&entry.800499100="
-  
+  pre_fill_link <- "https://docs.google.com/forms/d/e/1FAIpQLSdB3fmHBC9x-5vti9eCM92WsqTdwoeSn3Xptod951OHFF8m_Q/viewform?usp=pp_url&entry.2015965411"
+
   # Do not edit the code below
   if(!grepl("=$", pre_fill_link)){
     pre_fill_link <- paste0(pre_fill_link, "=")
@@ -176,7 +153,8 @@ submit_log <- function(){
                         skipped = p(log_$skipped, nrow_, NA),
                         datetime = p(log_$datetime, nrow_, NA),
                         stringsAsFactors = FALSE)
-  if(length(log_tbl)!=0){write.csv(log_tbl, file = temp, row.names = FALSE)}
+  write.csv(log_tbl, file = temp, row.names = FALSE)
   encoded_log <- base64encode(temp)
-  mi_progreso_sheet()
+  browseURL(paste0(pre_fill_link, log_tbl$lesson_name[1],
+                   "&entry.823771670=", encoded_log))
 }# So swirl does not repeat execution of commands

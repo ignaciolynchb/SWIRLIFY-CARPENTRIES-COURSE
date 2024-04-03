@@ -68,12 +68,6 @@
 
 - Class: text
   Output: En esta lección has aprendido a utilizar una función muy imporante del paquete tidyr. Con los conocimientos que hemos adquirido podremos iniciarnos en el mundo del análisis de datos.
-
-- Class: script
-  Output: ¿Tienes un grupo asignado? Trabaja con el script llamado mi_grupo. Asegúrese de guardar el script antes de escribir submit().
-  AnswerTests: expr_creates_var(correctName = "mi_grupo")
-  Hint: Escribe submit() para continuar
-  Script: mi_grupo.R
   
 - Class: mult_question
   Output: ¿Deseas enviar tu progreso? 

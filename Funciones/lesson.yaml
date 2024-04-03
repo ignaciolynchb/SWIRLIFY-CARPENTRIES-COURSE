@@ -1,6 +1,6 @@
 - Class: meta
   Course: SWIRLIFY-CARPENTRIES-COURSE
-  Lesson: 8.Funciones
+  Lesson: Funciones
   Author: Ignacio Lych
   Type: Standard
   Organization: FCEA-UDELAR
@@ -65,12 +65,6 @@
 
 - Class: text
   Output: En esta lección has aprendido a trabajar con tus propias funciones. Seguiremos profundizando el estudio de este objeto en las próximas lecciones.
-  
-- Class: script
-  Output: ¿Tienes un grupo asignado? Trabaja con el script llamado mi_grupo. Asegúrese de guardar el script antes de escribir submit().
-  AnswerTests: expr_creates_var(correctName = "mi_grupo")
-  Hint: Escribe submit() para continuar
-  Script: mi_grupo.R
   
 - Class: mult_question
   Output: ¿Deseas enviar tu progreso? 
