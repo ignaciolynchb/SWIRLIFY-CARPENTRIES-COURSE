@@ -1,13 +1,13 @@
 - Class: meta
   Course: SWIRLIFY-CARPENTRIES-COURSE
   Lesson: Explorando_data_frames
-  Author: Ignacio Lych
+  Author: Ignacio Lynch
   Type: Standard
   Organization: FCEA-UDELAR
   Version: 1.0.0
 
 - Class: text
-  Output: Bienvenido a la tercera lección de este curso, denominada 'Explorando Data Frames'.
+  Output: Bienvenido a la quinta lección de este curso, denominada 'Explorando Data Frames'.
   
 - Class: text
   Output: Aquí veremos como trabajar con Data Frames, estudiando su creación, manipulación y análisis.

@@ -6,4 +6,4 @@ gatos <- data.frame(color = c("mixto", "negro", "atigrado"),
                     le_gusta_cuerda = c(1, 0, 1))
 # Path to data
 datapath <- file.path(path.package('swirl'), 'Courses',
-                       'SWIRLIFY CARPENTRIES COURSE', 'Explorando_data_frames','gapminder-FiveYearData.csv')
+                       'SWIRLIFY-CARPENTRIES-COURSE', 'Explorando_data_frames','gapminder-FiveYearData.csv')

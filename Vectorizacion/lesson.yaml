@@ -7,7 +7,7 @@
   Version: 1.0.0
 
 - Class: text
-  Output: Bienvenido a la séptima lección de este curso, denominada 'Vectorización'.
+  Output: Bienvenido a la novena lección de este curso, denominada 'Vectorización'.
   
 - Class: text
   Output: El objetivo de esta lección es entender que la mayoría de las operaciones en R están vectorizadas. ¿Qué significa?
