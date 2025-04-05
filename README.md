@@ -1,7 +1,7 @@
 # SWIRLIFY-CARPENTRIES-COURSE
 Curso de R en español, basado en los contenidos de [Carpentries]([https://github.com/swirldev/swirl_courses/tree/master/R_Programming_Alt) sobre fundamentos de la programación en R. 
 
-**Curso realizado por Mauricio Garcia e Ignacio Lynch, docentes del curso de Estadística Descriptiva de la Licenciatura en Estadística de FCEA-UDELAR, unidad curricular en la que se espera aplicar este curso a la brevedad.**
+**Curso realizado por Mauricio García e Ignacio Lynch, docentes del curso de Estadística Descriptiva de la Licenciatura en Estadística de FCEA-UDELAR, unidad curricular en la que se aplica este curso.**
 
 **Descripción**
 
